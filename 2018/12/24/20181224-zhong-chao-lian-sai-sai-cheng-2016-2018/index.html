@@ -5,8 +5,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="标签: 日常, GitHub，新闻">
-    <meta name="description" content="标签: 日常 | 煎鱼的海">
+    <meta name="keywords" content="中超联赛赛程（2016-2018）, GitHub，新闻">
+    <meta name="description" content="中超联赛全赛程（2016-2018）
+用python爬取的中超比赛数据，网页使用Navicat直接导出的（稍加修改）。
+先祝各位圣诞快乐！
+============================分割线===================">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>标签: 日常 | 煎鱼的海</title>
+    <title>中超联赛赛程（2016-2018） | 煎鱼的海</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -266,115 +269,342 @@
     </nav>
 </header>
 
-<div class="bg-cover  about-cover" style="background-image: url('/medias/cover.jpg')">
+
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/images/zc.jpg')">
     <div class="container">
         <div class="row">
-            <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+            <div class="col s12 m12 l12">
                 <div class="brand">
-                    <div class="title center-align">
-                    
-                        煎鱼的海
-                    
-                    </div>
-
-                    <div class="description center-align">
-                    
-                        人之帅，莫过煎鱼
-                    
+                    <div class="description center-align post-title">
+                        中超联赛赛程（2016-2018）
                     </div>
                 </div>
             </div>
         </div>
-        
+    </div>
+</div>
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="article-tag">
+                
+                <a href="/tags/Work/" target="_blank">
+                    <span class="chip bg-color">Work</span>
+                </a>
+                
+                <a href="/tags/python/" target="_blank">
+                    <span class="chip bg-color">python</span>
+                </a>
+                
+            </div>
+            
+            <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/Work/" class="post-category" target="_blank">
+                        Work
+                    </a>
+                    
+                    <a href="/categories/Work/python/" class="post-category" target="_blank">
+                        python
+                    </a>
+                    
+                </span>
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2018-12-24
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="中超联赛全赛程（2016-2018）"><a href="#中超联赛全赛程（2016-2018）" class="headerlink" title="中超联赛全赛程（2016-2018）"></a><strong>中超联赛全赛程（2016-2018）</strong></h1><p><img src="http://cs.sports.163.com/images/csllogo.png" alt="中超logo"></p>
+<p>用python爬取的中超比赛数据，网页使用Navicat直接导出的（稍加修改）。</p>
+<p>先祝各位圣诞快乐！</p>
+<p>============================分割线=================================<br><a id="more"></a></p>
+<p>点击年份查看</p>
+<ul>
+<li><strong> <a href="https://euukey.com/zc2016.html" title="2016">2016</a></strong></li>
+<li><strong> <a href="https://euukey.com/zc2017.html" title="2017">2017</a></strong></li>
+<li><strong> <a href="https://euukey.com/zc2018.html" title="2018">2018</a></strong></li>
+</ul>
+<p>（数据来源:<a href="http://cs.sports.163.com" title="网易中超" target="_blank" rel="noopener">网易中超</a>）</p>
+
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff;
+        background-color: #22AB38;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff;
+        background-color: #019FE8;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs">
+                        <li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li>
+                        <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 <script>
-// Dynamically switch banner pictures every day.
-$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+    $(function () {
+        $('#reward .reward-link').on('click', function () {
+            $('#rewardModal').openModal();
+        });
+
+        $('#rewardModal .close').on('click', function () {
+            $('#rewardModal').closeModal();
+        });
+    });
 </script>
+            
 
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
 
-<main class="content">
-
+<div id="article-share">
     
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
 
-<div id="tags" class="container chip-container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">文章标签</div>
-            <div class="tag-chips">
-                
-                
-                <a href="/tags/日常/" title="日常: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active " data-tagname="日常" style="background-color: #F9EBEA;">日常
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Work/" title="Work: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="Work" style="background-color: #F5EEF8;">Work
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/python/" title="python: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="python" style="background-color: #D5F5E3;">python
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">转载请注明: </span>
+                    <a href="http://Euukey.com" class="b-link-green">煎鱼的海</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2018/12/24/20181224-zhong-chao-lian-sai-sai-cheng-2016-2018/" class="b-link-green">中超联赛赛程（2016-2018）</a>
+                </p>
             </div>
         </div>
     </div>
-</div>
 
-    <div class="container">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
         
-
-        <article>
-            <div class="row tags-posts">
-                
-                
-                <div class="article tag-post col s12 m6 l4" data-tags="日常" data-aos="fade-up">
-                    <div class="card">
-                        <a href="/2018/12/19/20181219-first/">
-                            <div class="card-image tag-image">
-                                
-                                
-                                <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="First">
-                                
-                                <span class="card-title">First</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-19
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/日常/" class="post-category" target="_blank">
-                                    日常
-                                    </a>
-                                    
-                                    
-                                </span>
-                            </div>
-                        </div>
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">本篇</div>
+            <div class="card">
+                <a href="/2018/12/24/20181224-zhong-chao-lian-sai-sai-cheng-2016-2018/">
+                    <div class="card-image">
+                        
+                        <img src="/images/zc.jpg" class="responsive-img" alt="中超联赛赛程（2016-2018）">
+                        
+                        <span class="card-title">中超联赛赛程（2016-2018）</span>
                     </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">中超联赛全赛程（2016-2018）
+用python爬取的中超比赛数据，网页使用Navicat直接导出的（稍加修改）。
+先祝各位圣诞快乐！
+============================分割线===================</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Work/" class="post-category" target="_blank">
+                                    Work
+                                </a>
+                            
+                            <a href="/categories/Work/python/" class="post-category" target="_blank">
+                                    python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Work/" target="_blank">
+                        <span class="chip bg-color">Work</span>
+                    </a>
+                    
+                    <a href="/tags/python/" target="_blank">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
                 </div>
                 
             </div>
-        </article>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2018/12/19/20181219-first/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="First">
+                        
+                        <span class="card-title">First</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">看这里！！！
+</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/日常/" class="post-category" target="_blank">
+                                    日常
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/日常/" target="_blank">
+                        <span class="chip bg-color">日常</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
     </div>
+</article>
+</div>
+    
+
 </main>
 
 
