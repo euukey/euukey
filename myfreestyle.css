@@ -1,0 +1,84 @@
+body{
+padding: 0;
+margin: 0;
+}
+
+#head_top{
+  margin: 0;
+  padding: 0;
+  height: 40px;
+  background-color: #EA533B;
+}
+#head_top ul{
+  font-size: 0px;
+}
+#head_top div ul li{
+  /* border: 1px solid blue; */
+  margin: 10px;
+  list-style: none;
+  float: left;
+  padding-left: 10px;
+  font: 15px "Helvetica Neue",sans-serif;
+  color: white;
+  cursor: pointer;
+}
+
+.link ul li img{
+  height: 10px;
+  width: 10px;
+}
+
+.login{
+float: right;
+}
+
+.content{
+  height: auto;
+  text-align: center;
+}
+
+.logo{
+  margin: auto;
+  padding-top: 100px;
+  padding-bottom: 10px;
+  /* border: 1px solid red; */
+  height: 180px;
+  width: 180px;
+
+}
+.search-bar{
+  display: inline-flex;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid gray;
+  width: 500px;
+  border-radius: 50px;
+  height: 30px;
+
+}
+.search-bar input{
+  border: none;
+  height: 30px;
+  width: 500px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.search1{
+  width: 30px;
+  height: 30px;
+  border: 0;
+  /* background-color: green; */
+  background: url(https://image.flaticon.com/icons/svg/126/126474.svg)no-repeat;
+  cursor: pointer;
+}
+
+.lang{
+  text-align: center;
+  margin-top: 30px;
+  font-family: "microsoft yahei";
+}
+
+.lang div{
+  color: blue;
+  cursor: pointer;
+}
