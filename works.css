@@ -1,0 +1,30 @@
+body {
+  text-align: center;
+}
+
+.top {
+  padding: 30px;
+  height: 40px;
+  background-color: #EA533B;
+  align-items: center;
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+}
+
+
+.hb img {
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 300px;
+  height: auto;
+}
+
+.photo img {
+  margin: auto;
+  width: 300px;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
