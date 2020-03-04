@@ -172,6 +172,157 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-超星慕课视频爬虫批量下载" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/04/chao-xing-mu-ke-shi-pin-pa-chong-pi-liang-xia-zai/">超星慕课视频爬虫批量下载</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/04/chao-xing-mu-ke-shi-pin-pa-chong-pi-liang-xia-zai/" class="archive-article-date">
+  	<time datetime="2020-03-04T08:32:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>时隔多年，重操旧业。</em></p>
+<p>今年受疫情影响，学校上课采用了在线教学。当然没课的人是体会不到那种“<strong>乐趣</strong>”的。</p>
+<p>偶然间学妹说某课的教学视频在B站上下架了，看不了视频。</p>
+<p>我本着乐于助人的态度，想着这种时候怎么可以怠惰，一定得让学弟学妹上好课。</p>
+<p><img src="/2020/03/04/chao-xing-mu-ke-shi-pin-pa-chong-pi-liang-xia-zai/ryss.jpg" alt="ryss"></p>
+<p>首先思量着怎么去找到这视频，在一番操作无果之后，最终还是屈服于<strong>国内第一搜索引擎</strong>。</p>
+<p>在多次筛选后找到了视频来源：<strong>超星慕课</strong>，视频可以在线观看，课程视频数量<strong>过百</strong>。</p>
+<p>接着又想着把视频捣鼓到自己的电脑上看。</p>
+<p>说干就干。</p>
+<p>最先考虑的是IDM自带的网站探索。然而探半天没探出个什么所以然。</p>
+<p>想了想手上能拿得出手的相应的技能也就<del>炙手可热</del>风靡各行各业的python。</p>
+<p>干了兄弟萌！OLG!<br><img src="/2020/03/04/chao-xing-mu-ke-shi-pin-pa-chong-pi-liang-xia-zai/olg.jpg" alt="[OLG]"></p>
+<p>于是花了一个晚上和第二天的时间重温了一下这门手艺，成功爬下了视频。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>github：<br><a href="https://github.com/euukey/cx-mooc-downloader" target="_blank" rel="noopener">https://github.com/euukey/cx-mooc-downloader</a></p>
+<p>（代码编排还挺糟糕，但注释还挺仔细的。）</p>
+<pre><code>from bs4 import BeautifulSoup          # 要自行安装的模块之一
+import requests
+import re
+import random
+from fake_useragent import UserAgent   # 要自行安装的模块之一
+import time
+import os
+import shutil
+
+#链接课程网站
+url = input(&quot;输入超星视频课程页面链接[如:http://mooc1.chaoxing.com/course/161102.html]：&quot;)
+
+
+#伪装ua
+fake_ua = UserAgent()
+headers = {&#39;User-Agent&#39;:fake_ua.random} # 随机生成ua
+r = requests.get(url,headers = headers)
+soup = BeautifulSoup(r.text, &#39;html.parser&#39;)
+
+
+# 创建保存视频的文件夹
+save_dir = &#39;D:/&#39;+soup.title.text #保存路径
+if os.path.exists(save_dir):
+    shutil.rmtree(save_dir) #清空文件夹
+os.mkdir(save_dir)
+
+#  课程链接列表
+url_list = []
+
+#搜索所有章节链接，并添加到列表中
+for link in soup.find_all(href=re.compile(&quot;nodedetailcontroller&quot;)):
+    course = link.get(&#39;href&#39;)
+    url_list.append(&#39;http://mooc1.chaoxing.com&#39;+course)  #补全链接
+
+#文件编号
+num = 1
+
+# 遍历所有链接下载
+print(&quot;开始下载视频！默认下载到D盘。&quot;)
+for v_url in url_list:
+    v_r = requests.get(v_url, headers=headers)
+    v_soup = BeautifulSoup(v_r.text, &#39;html.parser&#39;)
+    # 搜索视频id
+    for dict in v_soup.find_all(&#39;iframe&#39;):
+        data = eval(dict.get(&#39;data&#39;))
+    # 下载
+    print(&#39;downloading……&#39;)
+    req = requests.get(&#39;http://d0.ananas.chaoxing.com/download/&#39; + data[&#39;objectid&#39;], headers=headers)
+    with open(save_dir+&#39;/&#39;+str(num)+&#39;.&#39;+v_soup.find(id=&quot;nodeTitleEle&quot;).text + &#39;.mp4&#39;, &quot;wb&quot;) as f:# 标题:soup.find(id=&quot;nodeTitleEle&quot;).text
+        f.write(req.content)
+    print(v_soup.find(id=&quot;nodeTitleEle&quot;).text+&#39;complete！&#39;)
+    time.sleep(5+random.randint(1,11)) # 随机添加访问间隔
+    num+=1
+print(&quot;所有视频下载完成！&quot;)
+
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">超星</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/04/chao-xing-mu-ke-shi-pin-pa-chong-pi-liang-xia-zai/">点开看看呢 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-20200216-aria2-ariaNg-OLAINDEX搭建可离线下载的网盘" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -744,14 +895,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">资源</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">字体</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">onedrive</a>
               </li>
              
@@ -761,6 +904,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">aria2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">资源</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">字体</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">-python -超星 -爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">超星</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
             
             <div class="clearfix"></div>
