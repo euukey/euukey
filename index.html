@@ -734,51 +734,11 @@
         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     		&copy; 2020 Euukey <span id="footerTextIcon">❤️</span>
     	</div>
-        <div class="powered-by">
-        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
-            访客数:<span id="busuanzi_value_site_uv"></span>
-            <!--《添加网站运行时间 -->
-            <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
-            <script>
-                var now = new Date();
-
-                function createtime() {
-                    var grt = new Date("12/19/2018 12:00:00"); //此处修改你的建站时间或者网站上线时间
-                    now.setTime(now.getTime() + 250);
-                    days = (now - grt) / 1000 / 60 / 60 / 24;
-                    dnum = Math.floor(days);
-                    hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
-                    hnum = Math.floor(hours);
-                    if (String(hnum).length == 1) {
-                        hnum = "0" + hnum;
-                    }
-                    minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
-                    mnum = Math.floor(minutes);
-                    if (String(mnum).length == 1) {
-                        mnum = "0" + mnum;
-                    }
-                    seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-                    snum = Math.round(seconds);
-                    if (String(snum).length == 1) {
-                        snum = "0" + snum;
-                    }
-                    document.getElementById("timeDate").innerHTML = " | 已运行 " + dnum + " 天 ";
-                    document.getElementById("times").innerHTML = hnum + " h " + mnum + " m " + snum + " s";
-                }
-                setInterval("createtime()", 250);
-            </script>
-            <!-- 添加网站运行时间》 -->
-
-          </span>
-        </div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
       	</div>
     </div>
   </div>
-
-<!-- <br/> -->
-
 </footer>
 
     </div>
@@ -1042,7 +1002,8 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 </div>
   </div>
   <!--单击显示文字-->
-  <script type="text/javascript" src="/js/click_show_text.js"></script>
+  <!-- <script type="text/javascript" src="/js/click_show_text.js"></script> -->
+  <!-- 爆炸效果 -->
   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
   <script type="text/javascript" src="https://cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
   <script type="text/javascript" src="/js/fireworks.js"></script>
