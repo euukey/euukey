@@ -201,48 +201,10 @@
         <p>今天准备访问阿里云ecs上的宝塔面板，谁知道半天进不去。</p>
 <p>换了Edge浏览器,照样无法访问。让原本想搞事的我十分郁闷。</p>
 <p>于是先ping服务器，咩问题。</p>
-<p>又去看了安全组，端口正常开放。</p>
-<p>左思右想，准备手动启动宝塔。</p>
-<p>在ssh敲了<code>/etc/init.d/bt start</code>，发现是宝塔自动任务的问题，<code>task.py</code>少了模块。<br><img src="/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/bt-error.png" alt="bt"></p>
-<p>原来是这小问题。</p>
-<p><img src="/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/jiuzhe.jpg" alt="jz"></p>
-<p>简单！直接pip装上模块。再start一遍面板。</p>
-<p>嗯？怎么还有？？没事，接着装模块。反反复复红红火火恍恍惚惚。</p>
-<p>装着装着，越觉得不对劲，甚至想直接重装面板。</p>
-<p>之前咋没有这毛病？</p>
-<p><img src="/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/wenhao.jpg" alt="?"></p>
-<p>突然想起之前为了能跑python，把默认的python2.7手动改成了python3.6。应该是这个问题！</p>
-<p>于是借助网络的力量，找到了快速切换python版本的办法。</p>
-<hr>
-<p>先看看有哪些版本的python</p>
-<p><code>ls /usr/bin/python*</code></p>
-<p><img src="/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/python-v.png" alt="py"></p>
-<p>查看python替换版本信息</p>
-<p><code>update-alternatives --list python</code></p>
-<p>结果出现了:</p>
-<p><code>update-alternatives: error: no alternatives for python</code></p>
-<p>替换版本未被识别。更新替换版本来解决：</p>
-<pre><code>update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
-update-alternatives --install /usr/bin/python python /usr/bin/python3.6 2
-</code></pre><p>接着查看替换效果：</p>
-<p><code>update-alternatives --config python</code></p>
-<p><img src="/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/python2.png" alt="py"></p>
-<p>输入1切换回2.7版本。此时再查看python版本：</p>
-<p><code>python --version</code></p>
-<p><img src="/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/python-ver.png" alt="py"></p>
-<p>切换完成！！</p>
-<p>这时再restart一下面板：</p>
-<p><code>/etc/init.d/bt restart</code></p>
-<p><img src="/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/bt.png" alt="bt"></p>
-<p>再访问一下面板域名：</p>
-<p><img src="/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/bt-login.png" alt="bt-log"></p>
-<p>大功告成！！!<br><img src="/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/kx.png" alt="kx"></p>
-<hr>
-<p><strong>参考：</strong></p>
-<blockquote>
-<p><a href="https://www.cnblogs.com/Yanfang20180701/p/10588087.html" target="_blank" rel="noopener">https://www.cnblogs.com/Yanfang20180701/p/10588087.html</a></p>
-</blockquote>
-
+<p>又去看了安全组，端口正常开放。<br></p>
+        
+          <a class="article-more-a" href="/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/#more">more >></a>
+        
       
 
       

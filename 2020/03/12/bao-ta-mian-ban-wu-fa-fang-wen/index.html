@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="https://www.euukey.com">
   <title>宝塔面板无法访问？ | 煎鱼的海</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天准备访问阿里云ecs上的宝塔面板，谁知道半天进不去。 换了Edge浏览器,照样无法访问。让原本想搞事的我十分郁闷。 于是先ping服务器，咩问题。 又去看了安全组，端口正常开放。 左思右想，准备手动启动宝塔。 在ssh敲了/etc/init.d/bt start，发现是宝塔自动任务的问题，task.py少了模块。 原来是这小问题。  简单！直接pip装上模块。再start一遍面板。 嗯？怎么还">
+  <meta name="description" content="今天准备访问阿里云ecs上的宝塔面板，谁知道半天进不去。 换了Edge浏览器,照样无法访问。让原本想搞事的我十分郁闷。 于是先ping服务器，咩问题。 又去看了安全组，端口正常开放。">
 <meta name="keywords" content="python,宝塔面板">
 <meta property="og:type" content="article">
 <meta property="og:title" content="宝塔面板无法访问？">
 <meta property="og:url" content="https://www.euukey.com/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/index.html">
 <meta property="og:site_name" content="煎鱼的海">
-<meta property="og:description" content="今天准备访问阿里云ecs上的宝塔面板，谁知道半天进不去。 换了Edge浏览器,照样无法访问。让原本想搞事的我十分郁闷。 于是先ping服务器，咩问题。 又去看了安全组，端口正常开放。 左思右想，准备手动启动宝塔。 在ssh敲了/etc/init.d/bt start，发现是宝塔自动任务的问题，task.py少了模块。 原来是这小问题。  简单！直接pip装上模块。再start一遍面板。 嗯？怎么还">
+<meta property="og:description" content="今天准备访问阿里云ecs上的宝塔面板，谁知道半天进不去。 换了Edge浏览器,照样无法访问。让原本想搞事的我十分郁闷。 于是先ping服务器，咩问题。 又去看了安全组，端口正常开放。">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="https://www.euukey.com/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/bt-error.png">
 <meta property="og:image" content="https://www.euukey.com/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/jiuzhe.jpg">
@@ -25,10 +25,10 @@
 <meta property="og:image" content="https://www.euukey.com/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/bt.png">
 <meta property="og:image" content="https://www.euukey.com/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/bt-login.png">
 <meta property="og:image" content="https://www.euukey.com/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/kx.png">
-<meta property="og:updated_time" content="2020-03-11T16:57:18.245Z">
+<meta property="og:updated_time" content="2020-03-11T17:04:21.312Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="宝塔面板无法访问？">
-<meta name="twitter:description" content="今天准备访问阿里云ecs上的宝塔面板，谁知道半天进不去。 换了Edge浏览器,照样无法访问。让原本想搞事的我十分郁闷。 于是先ping服务器，咩问题。 又去看了安全组，端口正常开放。 左思右想，准备手动启动宝塔。 在ssh敲了/etc/init.d/bt start，发现是宝塔自动任务的问题，task.py少了模块。 原来是这小问题。  简单！直接pip装上模块。再start一遍面板。 嗯？怎么还">
+<meta name="twitter:description" content="今天准备访问阿里云ecs上的宝塔面板，谁知道半天进不去。 换了Edge浏览器,照样无法访问。让原本想搞事的我十分郁闷。 于是先ping服务器，咩问题。 又去看了安全组，端口正常开放。">
 <meta name="twitter:image" content="https://www.euukey.com/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/bt-error.png">
   
     <link rel="alternative" href="/atom.xml" title="煎鱼的海" type="application/atom+xml">
@@ -210,7 +210,7 @@
         <p>今天准备访问阿里云ecs上的宝塔面板，谁知道半天进不去。</p>
 <p>换了Edge浏览器,照样无法访问。让原本想搞事的我十分郁闷。</p>
 <p>于是先ping服务器，咩问题。</p>
-<p>又去看了安全组，端口正常开放。</p>
+<p>又去看了安全组，端口正常开放。<br><a id="more"></a></p>
 <p>左思右想，准备手动启动宝塔。</p>
 <p>在ssh敲了<code>/etc/init.d/bt start</code>，发现是宝塔自动任务的问题，<code>task.py</code>少了模块。<br><img src="/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/bt-error.png" alt="bt"></p>
 <p>原来是这小问题。</p>
@@ -246,6 +246,7 @@ update-alternatives --install /usr/bin/python python /usr/bin/python3.6 2
 <p>再访问一下面板域名：</p>
 <p><img src="/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/bt-login.png" alt="bt-log"></p>
 <p>大功告成！！!<br><img src="/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/kx.png" alt="kx"></p>
+<p>最后今天植树节去蚂蚁森林种种树。</p>
 <hr>
 <p><strong>参考：</strong></p>
 <blockquote>
