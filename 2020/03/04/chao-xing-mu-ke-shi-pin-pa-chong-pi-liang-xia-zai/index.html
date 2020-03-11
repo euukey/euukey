@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://www.euukey.com/2020/03/04/chao-xing-mu-ke-shi-pin-pa-chong-pi-liang-xia-zai/index.html">
 <meta property="og:site_name" content="煎鱼的海">
 <meta property="og:description" content="时隔多年，重操旧业。 今年受疫情影响，学校上课采用了在线教学。当然没课的人是体会不到那种“乐趣”的。 偶然间学妹说某课的教学视频在B站上下架了，看不了视频。 我本着乐于助人的态度，想着这种时候怎么可以怠惰，一定得让学弟学妹上好课。">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="https://www.euukey.com/2020/03/04/chao-xing-mu-ke-shi-pin-pa-chong-pi-liang-xia-zai/ryss.jpg">
 <meta property="og:image" content="https://www.euukey.com/2020/03/04/chao-xing-mu-ke-shi-pin-pa-chong-pi-liang-xia-zai/olg.jpg">
 <meta property="og:updated_time" content="2020-03-09T10:37:44.859Z">
@@ -47,7 +47,7 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #d2ebcd"></div>
+<div class="overlay" style="background: #5c636e"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -100,7 +100,12 @@
 					<a class="mail" target="_blank" href="mailto:euukey@163.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
-		</nav>
+			<!-- 网易云音乐插件 -->
+			
+			    <div style="position:absolute; bottom:120px left:auto; width:85%">
+			        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="52" src="//music.163.com/outchain/player?type=2&id=418603441&auto=0&height=32"></iframe>
+			    </div>
+					</nav>
 		<!-- <iframe class="163music" frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=86 src="//music.163.com/outchain/player?type=2&id=167876&auto=0&height=66"></iframe> -->
 	</header>
 </div>
@@ -109,7 +114,7 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #d2ebcd"></div>
+  	<div class="overlay js-overlay" style="background: #5c636e"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -488,7 +493,7 @@ new Valine({
                     if (String(snum).length == 1) {
                         snum = "0" + snum;
                     }
-                    document.getElementById("timeDate").innerHTML = " | 已运行 " + dnum + " 天 ";
+                    document.getElementById("timeDate").innerHTML = " | 已运行 " + dnum + " d ";
                     document.getElementById("times").innerHTML = hnum + " h " + mnum + " m " + snum + " s";
                 }
                 setInterval("createtime()", 250);
@@ -579,19 +584,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Work</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">日常</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">新闻评论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">onedrive</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">OLAINDEX</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">aria2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Work</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -608,18 +625,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">onedrive</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">OLAINDEX</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">aria2</a>
               </li>
             
             <div class="clearfix"></div>

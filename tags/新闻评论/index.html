@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://www.euukey.com/tags/新闻评论/index.html">
 <meta property="og:site_name" content="煎鱼的海">
 <meta property="og:description" content="人之帅，莫过煎鱼">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh-cn">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="煎鱼的海">
 <meta name="twitter:description" content="人之帅，莫过煎鱼">
@@ -43,7 +43,7 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #d2ebcd"></div>
+<div class="overlay" style="background: #5c636e"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -96,7 +96,12 @@
 					<a class="mail" target="_blank" href="mailto:euukey@163.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
-		</nav>
+			<!-- 网易云音乐插件 -->
+			
+			    <div style="position:absolute; bottom:120px left:auto; width:85%">
+			        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="52" src="//music.163.com/outchain/player?type=2&id=418603441&auto=0&height=32"></iframe>
+			    </div>
+					</nav>
 		<!-- <iframe class="163music" frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=86 src="//music.163.com/outchain/player?type=2&id=167876&auto=0&height=66"></iframe> -->
 	</header>
 </div>
@@ -105,7 +110,7 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #d2ebcd"></div>
+  	<div class="overlay js-overlay" style="background: #5c636e"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -265,7 +270,7 @@
                     if (String(snum).length == 1) {
                         snum = "0" + snum;
                     }
-                    document.getElementById("timeDate").innerHTML = " | 已运行 " + dnum + " 天 ";
+                    document.getElementById("timeDate").innerHTML = " | 已运行 " + dnum + " d ";
                     document.getElementById("times").innerHTML = hnum + " h " + mnum + " m " + snum + " s";
                 }
                 setInterval("createtime()", 250);
@@ -356,19 +361,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Work</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">日常</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">新闻评论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">onedrive</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">OLAINDEX</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">aria2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Work</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -385,18 +402,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">onedrive</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">OLAINDEX</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">aria2</a>
               </li>
             
             <div class="clearfix"></div>
