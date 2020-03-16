@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://www.euukey.com/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/aria2-3.png">
 <meta property="og:image" content="https://www.euukey.com/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/aria2-4.png">
 <meta property="og:image" content="https://www.euukey.com/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/aria2-5.png">
-<meta property="og:updated_time" content="2020-02-25T13:08:50.752Z">
+<meta property="og:updated_time" content="2020-03-16T07:49:17.579Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="aria2+ariaNG+OLAINDEX搭建可离线下载的网盘">
 <meta name="twitter:description" content="最近被迫宅在家闲来无事，就搞了个VPS玩玩。找了几圈，发现个比较实用的用法： 搭建一个基于OLAINDEX+onedrive的网盘，可通过aria2离线下载。">
@@ -383,7 +383,14 @@ while(true);do   #path被赋值为Aria2下载目录，filepath被赋值为下载
         exit 0
     fi
 done
-</code></pre><p>保存，这样下载文件到vps后会上传到onedrive再删除vps上的文件。</p>
+</code></pre><p>保存，然后编辑aria2配置文件:</p>
+<p><code>vi /root/.aria2/aria2.conf</code></p>
+<p>按<code>i</code>进入插入模式，在文件中添加一句：</p>
+<p><code>on-download-complete=/root/.aria2/up.sh</code></p>
+<p>按<code>Esc</code>，输入<code>:wq</code>保存退出。</p>
+<p>重启aria2:</p>
+<p><code>service aria2 restart</code></p>
+<p>这样下载文件到vps后会上传到onedrive再删除vps上的文件。</p>
 <p><strong>到此，可离线在线观看视频的网盘搭建完成！</strong></p>
 <p><strong>参考：</strong></p>
 <blockquote>
@@ -731,18 +738,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">新闻评论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">资源</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">字体</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">onedrive</a>
               </li>
              
@@ -759,11 +754,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">资源</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">字体</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">超星</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">新闻评论</a>
               </li>
             
             <div class="clearfix"></div>
