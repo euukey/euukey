@@ -3,6 +3,25 @@
   
     
     <entry>
+      <title>ssh无法连接VPS</title>
+      <link href="/2020/04/08/ssh-wu-fa-lian-jie-vps/"/>
+      <url>/2020/04/08/ssh-wu-fa-lian-jie-vps/</url>
+      
+        <content type="html"><![CDATA[<p>下午打开MobaXterm准备连上意大利新机，发现ssh始终连不上。</p><a id="more"></a><p>我以为网络不好，等一会吧，毕竟有点远= =。</p><p>过了几个小时再次用ssh连接vps，发现还是连不上。于是ping了下，没问题。又打开机子上的网站，发现：</p><p><img src="/2020/04/08/ssh-wu-fa-lian-jie-vps/20200408-1.png" alt=""></p><p>数据库连不上了。</p><p>打开宝塔面板，看了下mysql，居然停止了。原来如此。于是兴致冲冲启动它，半天打不开。看了下日志：</p><pre><code>200408 20:54:50 [ERROR] Can&#39;t start server: Bind on TCP/IP port: Address already in use200408 20:54:50 [ERROR] Do you already have another mysqld server running on port: 3306 ?200408 20:54:50 [ERROR] Aborting</code></pre><p>原来端口被占用了啊……</p><p>马上到官网用提供的终端，敲了一行<code>lsof -i:3306</code>，看到<code>sshd</code>占用了3306端口。</p><p>想了想，昨晚在宝塔动过端口。就去看了下：<br><img src="/2020/04/08/ssh-wu-fa-lian-jie-vps/20200408-2.png" alt=""></p><p>原来一时疏忽把端口号加到宝塔的ssh上了……<br><img src="/2020/04/08/ssh-wu-fa-lian-jie-vps/20200408-3.png" alt=""></p><p>接下来好办了，把端口搞回去。<br>重启ssh：<code>service sshd restart</code><br>搞定。</p><p>以后还是得细心点……</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> ssh </tag>
+            
+            <tag> 宝塔面板 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>OLAINDEX船新版本的aria2离线下载</title>
       <link href="/2020/03/16/20200316-chuan-xin-ban-ben-de-aria2-chi-xian-xia-zai/"/>
       <url>/2020/03/16/20200316-chuan-xin-ban-ben-de-aria2-chi-xian-xia-zai/</url>
@@ -92,9 +111,9 @@
             
             <tag> onedrive </tag>
             
-            <tag> OLAINDEX </tag>
-            
             <tag> aria2 </tag>
+            
+            <tag> OLAINDEX </tag>
             
         </tags>
       
