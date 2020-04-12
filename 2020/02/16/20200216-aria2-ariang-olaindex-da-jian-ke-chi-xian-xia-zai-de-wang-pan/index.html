@@ -9,7 +9,7 @@
   <title>aria2+ariaNG+OLAINDEX搭建可离线下载的网盘 | 煎鱼的海</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="最近被迫宅在家闲来无事，就搞了个VPS玩玩。找了几圈，发现个比较实用的用法： 搭建一个基于OLAINDEX+onedrive的网盘，可通过aria2离线下载。">
-<meta name="keywords" content="onedrive,aria2,OLAINDEX">
+<meta name="keywords" content="onedrive,OLAINDEX,aria2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="aria2+ariaNG+OLAINDEX搭建可离线下载的网盘">
 <meta property="og:url" content="https://www.euukey.com/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/index.html">
@@ -32,12 +32,12 @@
 <meta property="og:image" content="https://www.euukey.com/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/bt10.png">
 <meta property="og:image" content="https://www.euukey.com/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/onedrive1.png">
 <meta property="og:image" content="https://www.euukey.com/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/onedrive2.png">
-<meta property="og:image" content="https://www.euukey.com/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/aria2-1.png">
 <meta property="og:image" content="https://www.euukey.com/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/aria2-2.png">
+<meta property="og:image" content="https://www.euukey.com/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/aria2-1.png">
 <meta property="og:image" content="https://www.euukey.com/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/aria2-3.png">
 <meta property="og:image" content="https://www.euukey.com/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/aria2-4.png">
 <meta property="og:image" content="https://www.euukey.com/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/aria2-5.png">
-<meta property="og:updated_time" content="2020-03-16T07:49:17.579Z">
+<meta property="og:updated_time" content="2020-04-12T14:09:21.114Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="aria2+ariaNG+OLAINDEX搭建可离线下载的网盘">
 <meta name="twitter:description" content="最近被迫宅在家闲来无事，就搞了个VPS玩玩。找了几圈，发现个比较实用的用法： 搭建一个基于OLAINDEX+onedrive的网盘，可通过aria2离线下载。">
@@ -251,7 +251,7 @@
 <li>一颗耐心</li>
 </ol>
 </blockquote>
-<p>三个域名我用的是子域名，分别为<code>dl.xx.com</code>、<code>bt.xx.com</code>、<code>pan.xx.com</code>，在域名后台添加三条记录指向你的VPS的IP。如图：</p>
+<p>三个域名我用的是子域名，分别为<code>dl.xx.com【可选】</code>、<code>bt.xx.com【可选】</code>、<code>pan.xx.com</code>，在域名后台添加三条记录指向你的VPS的IP。如图：</p>
 <div align="center"><br> <img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/dns.png" alt="dns"><br></div>
 
 
@@ -269,7 +269,7 @@ password: ****
 </code></pre><p>访问地址进入宝塔面板后台，左侧选择<code>面板设置</code>进行相关设置：</p>
 <ul>
 <li>修改登录账号密码;</li>
-<li>绑定事先准备好的<code>bt.xx.com</code>，以后访问面板直接输入：<code>bt.xx.com:8888</code><br><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/bt1.png" alt="面板设置"><br></div><br><br></li>
+<li>【可选】绑定事先准备好的<code>bt.xx.com</code>，以后访问面板直接输入：<code>bt.xx.com:8888/xxx</code><br><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/bt1.png" alt="面板设置"><br></div><br><br></li>
 </ul>
 <font size="6"><strong>配置环境</strong></font>
 
@@ -333,15 +333,12 @@ git pull
 composer install -vvv
 php artisan od:update
 </code></pre><p><br></p>
-<p><font size="6"><strong>配置aria2</strong></font><br><br><br><strong>站点配置</strong></p>
-<p>打开宝塔面板，选择<code>网站</code>，<code>添加站点</code>，域名填入事先准备好的<code>dl.xx.com</code>，php版本选择<code>纯静态</code>，提交。</p>
-<p><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/aria2-1.png" alt="onedrive绑定"><br></div><br><br><br><strong>aria2 安装</strong><br><br><br>打开vps，输入:</p>
-<pre><code>cd /www/wwwroot/dl.xx.com #跳转到你的dl站点目录
-# 这里使用逗比的一键脚本，还可以自动更新tracker。
+<p><font size="6"><strong>配置aria2</strong></font><br><br><br><strong>aria2 安装</strong><br><br><br>打开vps，输入:</p>
+<pre><code># 这里使用逗比的一键脚本，还可以自动更新tracker。
 wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/aria2.sh &amp;&amp; chmod +x aria2.sh &amp;&amp; bash aria2.sh
-# 备用地址
+# 备用地址moerats
 wget -N --no-check-certificate https://www.moerats.com/usr/shell/Aria2/aria2.sh &amp;&amp; chmod +x aria2.sh &amp;&amp; bash aria2.sh
-</code></pre><p><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/aria2-2.png" alt="onedrive绑定"><br></div><br><br><br>接着输入<code>1</code>安装aria2，回车。版本选择的地方直接回车。<br>安装完成后，会显示aria2信息，记得保存。</p>
+</code></pre><p><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/aria2-2.png" alt="onedrive绑定"><br></div><br><br><br>接着输入<code>1</code>安装aria2，回车。版本选择的地方直接回车。<br>安装完成后，会显示aria2信息，记得保存。<br>如果忘记配置信息，也可输入<code>8</code>查看。<br>输入<code>10</code>配置自动更新 BT-Tracker服务器,加速bt下载。</p>
 <pre><code>Aria2 简单配置信息：
 
  地址   : **.**.**.**
@@ -349,14 +346,25 @@ wget -N --no-check-certificate https://www.moerats.com/usr/shell/Aria2/aria2.sh 
  密码   : **************
  目录   : /usr/local/caddy/www/aria2/Download
 
-</code></pre><p><br><br><strong>aria2和ariaNg设置</strong><br>在vps输入以下命令：</p>
-<pre><code>cd /www/wwwroot/dl.xx.com #跳转到你的dl站点目录
-sh aria2.sh
-</code></pre><p>输入<code>10</code>配置自动更新 BT-Tracker服务器,加速bt下载。如果忘记配置信息，也可输入<code>8</code>查看。</p>
-<p>访问<code>dl.xx.com</code>，显示未连接。选择左侧<code>ariaNg设置</code>，右侧选择<code>RPC(dl.xx.com)</code></p>
+</code></pre><p><br><br><strong>【可选】ariaNg配置和aria2其他设置</strong></p>
+<p><br><br>打开宝塔面板，选择<code>网站</code>，<code>添加站点</code>，域名填入事先准备好的<code>dl.xx.com</code>，php版本选择<code>纯静态</code>，提交。</p>
+<p><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/aria2-1.png" alt="onedrive绑定"><br></div><br><br></p>
+<pre><code>#跳转到dl网站目录
+cd /www/wwwroot/dl.xx.com
+#下载ariaNg
+wget https://github.com/mayswind/AriaNg/releases/download/1.1.5/AriaNg-1.1.5-AllInOne.zip
+#安装unzip
+apt install unzip
+#解压
+unzip AriaNg-1.1.5-AllInOne.zip
+#删除下载文件
+rm -rf AriaNg-1.1.5-AllInOne.zip
+</code></pre><p>访问<code>dl.xx.com</code>，显示未连接。选择左侧<code>ariaNg设置</code>，右侧选择<code>RPC(dl.xx.com)</code></p>
 <p><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/aria2-3.png" alt="onedrive绑定"><br></div><br><br><br>输入配置信息，刷新页面，左下角显示已连接。</p>
 <p><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/aria2-4.png" alt="onedrive绑定"><br></div><br><br><br>再选择左侧<code>aria2设置</code>&gt;<code>BitTorrent 设置</code>，拉到最下面，<code>最小做种时间</code>输入0。</p>
-<p><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/aria2-5.png" alt="onedrive绑定"><br></div><br><br><br><strong>自动下载上传（离线下载）</strong><br>打开宝塔面板，选择左侧<code>文件</code>，跳转到<code>/root/.aria2</code>目录下，新建一个<code>up.sh</code>。<br>编辑<code>up.sh</code>，输入：</p>
+<p><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/aria2-5.png" alt="onedrive绑定"><br></div><br><br><br><strong>自动下载上传（离线下载）</strong></p>
+<p><a href="https://www.euukey.com/2020/03/16/20200316-chuan-xin-ban-ben-de-aria2-chi-xian-xia-zai/">&gt;&gt;&gt;0316已更新船新版本&lt;&lt;&lt;</a></p>
+<p>打开宝塔面板，选择左侧<code>文件</code>，跳转到<code>/root/.aria2</code>目录下，新建一个<code>up.sh</code>。<br>编辑<code>up.sh</code>，输入：</p>
 <pre><code>#!/bin/bash
 downloadpath=&#39;/usr/local/caddy/www/aria2/Download&#39;   #修改成Aria2下载文件夹
 folder=&#39;/lixian&#39;   #上传至网盘里的文件夹(自动创建)
@@ -450,11 +458,11 @@ done
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">aria2</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">OLAINDEX</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">OLAINDEX</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">aria2</a>
         		</li>
       		
 		</ul>
@@ -744,7 +752,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">新闻评论</a>
+                <a href="javascript:void(0)" class="js-tag color4">onedrive</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">OLAINDEX</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">aria2</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -756,15 +772,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">onedrive</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">aria2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">OLAINDEX</a>
+                <a href="javascript:void(0)" class="js-tag color5">新闻评论</a>
               </li>
              
               <li class="article-tag-list-item">
