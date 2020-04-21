@@ -7,7 +7,7 @@
       <link href="/2020/04/20/tachiyomi-yi-kuan-kai-yuan-man-hua-yue-du-qi/"/>
       <url>/2020/04/20/tachiyomi-yi-kuan-kai-yuan-man-hua-yue-du-qi/</url>
       
-        <content type="html"><![CDATA[<p>最近补完某部烂尾番之后，吐槽完动画制作，最后只能去找漫画来看。</p><p>无意间在<a href="www.coolapk.com">基安</a>发现了一个开源的漫画阅读器，于是下下来van了一番，发现还挺好用。<br><a id="more"></a><br>界面干净， 扩展需要kx上网才能显示，可手动安装（链接在文章后面）。</p><p>来几张图：</p><p><img src="/2020/04/20/tachiyomi-yi-kuan-kai-yuan-man-hua-yue-du-qi/sj.png" width="30%" height="30%"> &nbsp;<img src="/2020/04/20/tachiyomi-yi-kuan-kai-yuan-man-hua-yue-du-qi/ce.png" width="30%" height="30%"></p><h2 id="nbsp"><a href="#nbsp" class="headerlink" title=" &nbsp;"></a><img src="/2020/04/20/tachiyomi-yi-kuan-kai-yuan-man-hua-yue-du-qi/main.png" width="30%" height="30%"> &nbsp;<img src="/2020/04/20/tachiyomi-yi-kuan-kai-yuan-man-hua-yue-du-qi/kz.png" width="30%" height="30%"></h2><p>APP名为Tachiyomi，项目地址：<a href="https://github.com/inorichi/tachiyomi" target="_blank" rel="noopener">Github</a></p><p>目前只支持<strong>安卓平台</strong>，APP更新到0.8.5版本。</p><p><strong>APP下载</strong>（4.20更新）：</p><p>国内推荐<em>蓝奏云、Onedrive</em>下载。</p><p><a href="https://github.com/inorichi/tachiyomi/releases/download/v0.8.5/tachiyomi-v0.8.5.apk" target="_blank" rel="noopener">Github</a></p><p><a href="https://lanzous.com/b00zf328j" target="_blank" rel="noopener">蓝奏云</a></p><p><a href="https://pan.euukey.com/down/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/tachiyomi-v0.8.5.apk" target="_blank" rel="noopener">Onedrive</a></p><p><strong>扩展下载</strong>（4.20更新）：</p><p>所有扩展：</p><p><a href="https://github.com/inorichi/tachiyomi-extensions/tree/repo/apk" target="_blank" rel="noopener">Github</a></p><p><a href="https://lanzous.com/ibmcjcb" target="_blank" rel="noopener">蓝奏云</a></p><p>中文扩展合集:</p><p><a href="https://lanzous.com/b00zf34kd" target="_blank" rel="noopener">蓝奏云</a></p>]]></content>
+        <content type="html"><![CDATA[<p>最近补完某部烂尾番之后，吐槽完动画制作，最后只能去找漫画来看。</p><p>无意间在<a href="https://www.coolapk.com" target="_blank" rel="noopener">基安</a>发现了一个开源的漫画阅读器，于是下下来van了一番，发现还挺好用。<br><a id="more"></a><br>界面干净， 扩展需要kx上网才能显示，可手动安装（链接在文章后面）。</p><p>来几张图：</p><p><img src="/2020/04/20/tachiyomi-yi-kuan-kai-yuan-man-hua-yue-du-qi/sj.png" width="30%" height="30%"> &nbsp;<img src="/2020/04/20/tachiyomi-yi-kuan-kai-yuan-man-hua-yue-du-qi/ce.png" width="30%" height="30%"></p><h2 id="nbsp"><a href="#nbsp" class="headerlink" title=" &nbsp;"></a><img src="/2020/04/20/tachiyomi-yi-kuan-kai-yuan-man-hua-yue-du-qi/main.png" width="30%" height="30%"> &nbsp;<img src="/2020/04/20/tachiyomi-yi-kuan-kai-yuan-man-hua-yue-du-qi/kz.png" width="30%" height="30%"></h2><p>APP名为Tachiyomi，项目地址：<a href="https://github.com/inorichi/tachiyomi" target="_blank" rel="noopener">Github</a></p><p>目前只支持<strong>安卓平台</strong>，APP更新到0.8.5版本。</p><p><strong>APP下载</strong>（4.20更新）：</p><p>国内推荐<em>蓝奏云、Onedrive</em>下载。</p><p><a href="https://github.com/inorichi/tachiyomi/releases/download/v0.8.5/tachiyomi-v0.8.5.apk" target="_blank" rel="noopener">Github</a></p><p><a href="https://lanzous.com/b00zf328j" target="_blank" rel="noopener">蓝奏云</a></p><p><a href="https://pan.euukey.com/down/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/tachiyomi-v0.8.5.apk" target="_blank" rel="noopener">Onedrive</a></p><p><strong>扩展下载</strong>（4.20更新）：</p><p>所有扩展：</p><p><a href="https://github.com/inorichi/tachiyomi-extensions/tree/repo/apk" target="_blank" rel="noopener">Github</a></p><p><a href="https://lanzous.com/ibmcjcb" target="_blank" rel="noopener">蓝奏云</a></p><p>中文扩展合集:</p><p><a href="https://lanzous.com/b00zf34kd" target="_blank" rel="noopener">蓝奏云</a></p>]]></content>
       
       
       
@@ -134,9 +134,9 @@
             
             <tag> onedrive </tag>
             
-            <tag> OLAINDEX </tag>
-            
             <tag> aria2 </tag>
+            
+            <tag> OLAINDEX </tag>
             
         </tags>
       
