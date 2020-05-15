@@ -4,7 +4,7 @@ body {
 
 .top {
   padding: 30px;
-  height: 40px;
+  height: auto;
   background-color:#0084FF;
   align-items: center;
   font-weight: bold;
