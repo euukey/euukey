@@ -50,22 +50,7 @@ function newgame(){
     updateScore(score);
 }
 function init(){
-    for(i=0;i<4;i++){
-        board[i]=new Array();
-        for(j=0;j<4;j++){
-            var gridCell=$('#grid-cell-'+i+'-'+j);
-            gridCell.css('top',getPosTop(i,j));
-            gridCell.css('left',getPosLeft(i,j));
-            board[i][j]=0;
-        }
-    }
-    updateBoardView();
-}
-function updateBoardView(){
-    $('.number-cell').remove();
-    for(i=0;i<4;i++){
-        for(j=0;j<4;j++){
-            $('#grid-container').append('<div class="number-cell" id="number-cell-'+i+'-'+j+'"></div>');
+    for(i=0;i<4;i++){ board[i]="new" array();="" for(j="0;j<4;j++){" var="" gridcell="$('#grid-cell-'+i+'-'+j);" gridcell.css('top',getpostop(i,j));="" gridcell.css('left',getposleft(i,j));="" board[i][j]="0;" }="" updateboardview();="" function="" updateboardview(){="" $('.number-cell').remove();="" for(i="0;i<4;i++){" $('#grid-container').append('<div="" class="number-cell" id="number-cell-'+i+'-'+j+'">');
             var theNumberCell=$('#number-cell-'+i+'-'+j);
             if(board[i][j]==0){
                 theNumberCell.css('width','0px');
@@ -95,76 +80,7 @@ function generateOneNumber(){
     var randx=Math.floor(Math.random()*4);
     var randy=Math.floor(Math.random()*4);
     var time=0;
-    while (time<50){
-        if(board[randx][randy]==0) break;
-        randx=Math.floor(Math.random()*4);
-        randy=Math.floor(Math.random()*4);
-        time++;
-    }
-    if(time==50){
-        for(i=0;i<4;i++)
-            for(j=0;j<4;j++){
-                if (board[i][j]==0){
-                    randx=i;
-                    randy=j;
-                }
-            }
-    }
-    //随机一个数字
-    //var randNumber=Math.random()<0.5?2:4;
-    var randNumber=2;
-    //在随机位置显示随机数
-    showNumberWithAnimation(randx,randy,randNumber);
-    return true;
-}
-
-$(document).keydown(function (event) {
-    event.preventDefault();
-    switch (event.keyCode){
-        case 37://left
-            if (moveLeft()){
-                setTimeout(generateOneNumber(),210);
-                setTimeout(isgameover(),1000);
-            }
-            break;
-        case 38://up
-            if (moveUp()){
-                setTimeout(generateOneNumber(),210);
-                setTimeout(isgameover(),1000);
-            }
-            break;
-        case 39://right
-            if (moveRight()){
-                setTimeout(generateOneNumber(),210);
-                setTimeout(isgameover(),1000);
-            }
-            break;
-        case 40://down
-            if (moveDown()){
-                setTimeout(generateOneNumber(),210);
-                setTimeout(isgameover(),1000);
-            }
-            break;
-        default://default
-            break;
-    }
-    //setTimeout( $('#audio1').attr('muted',' '),1000);
-});
-
-document.addEventListener('touchstart', function (event) {
-    startX=event.touches[0].pageX;
-    startY=event.touches[0].pageY;
-});
-document.addEventListener('touchend', function (event) {
-    endX=event.changedTouches[0].pageX;
-    endY=event.changedTouches[0].pageY;
-
-    var deltaX=endX-startX;
-    var deltaY=endY-startY;
-
-    if(Math.abs(deltaX)<0.3*documentWidth&&Math.abs(deltaY)<0.3*documentWidth)
-    return;
-    if(Math.abs(deltaX)>=Math.abs(deltaY)){
+    while (time<50){ if(board[randx][randy]="=0)" break;="" randx="Math.floor(Math.random()*4);" randy="Math.floor(Math.random()*4);" time++;="" }="" if(time="=50){" for(i="0;i<4;i++)" for(j="0;j<4;j++){" if="" (board[i][j]="=0){" 随机一个数字="" var="" randnumber="Math.random()<0.5?2:4;" 在随机位置显示随机数="" shownumberwithanimation(randx,randy,randnumber);="" return="" true;="" $(document).keydown(function="" (event)="" {="" event.preventdefault();="" switch="" (event.keycode){="" case="" 37:="" left="" (moveleft()){="" settimeout(generateonenumber(),210);="" settimeout(isgameover(),1000);="" 38:="" up="" (moveup()){="" 39:="" right="" (moveright()){="" 40:="" down="" (movedown()){="" default:="" default settimeout(="" $('#audio1').attr('muted','="" '),1000);="" });="" document.addeventlistener('touchstart',="" function="" startx="event.touches[0].pageX;" starty="event.touches[0].pageY;" document.addeventlistener('touchend',="" endx="event.changedTouches[0].pageX;" endy="event.changedTouches[0].pageY;" deltax="endX-startX;" deltay="endY-startY;" if(math.abs(deltax)<0.3*documentwidth&&math.abs(deltay)<0.3*documentwidth)="" return;="" if(math.abs(deltax)="">=Math.abs(deltaY)){
         if(deltaX>0){
             if (moveRight()){
                 setTimeout(generateOneNumber(),210);
@@ -179,89 +95,7 @@ document.addEventListener('touchend', function (event) {
         }
     }
     else{
-        if(deltaY<0){
-            if (moveUp()){
-                setTimeout(generateOneNumber(),210);
-                setTimeout(isgameover(),1000);
-            }//up
-        }
-        else{
-            if (moveDown()){
-                setTimeout(generateOneNumber(),210);
-                setTimeout(isgameover(),1000);
-            } //down
-        }
-    }
-
-});
-
-function isgameover(){
-    if(nomove(board)){
-        gameover();
-    }
-}
-function gameover(){
-    var nn=Math.ceil(Math.random()*4);
-    switch(nn){
-        case 1:alert('404\n⚠️NOT FOUND');
-            break;
-        case 2:alert('胜败乃兵家常事\n少侠请重新来过');
-            break;
-        case 3: alert('修仙有风险\n路上需谨慎');
-            break;
-        case 4: alert('性❤️感🔞2048\n在🌹线🌹合👄体👄');
-        default:
-            break;
-    }
-
-
-
-
-}
-function moveLeft() {
-    if (!canMoveLeft(board)) {
-        return false;
-    }
-
-    for (i = 0; i < 4; i++) {
-        for (j = 1; j < 4; j++) {
-            if (board[i][j] != 0) {
-                for (k = 0; k < j; k++) {
-                    if (board[i][k] == 0 && noBlockHorizontalX(i, k, j, board)) {
-                        //$('#audio2').removeAttr('muted','');
-                        showMoveAnimation(i, j, i, k);
-                        board[i][k] = board[i][j];
-                        //console.log('左边为零的情况');
-                        board[i][j] = 0;
-                        continue;
-                    }
-                    else if (board[i][k] == board[i][j] && noBlockHorizontalX(i, k, j, board)&&flag==0) {
-
-                        showMoveAnimation(i, j, i, k);
-                        board[i][k] += board[i][j];
-                        //console.log('左边相等的情况');
-                        board[i][j] = 0;
-                        score+=board[i][k];
-                        updateScore(score);
-                        flag=1;
-                        continue;
-                    }
-                }
-            }
-        }
-        flag=0;
-    }
-
-    setTimeout('updateBoardView()',200);
-    return true;
-}
-function moveRight() {
-    if (!canMoveRight(board)) {
-        return false;
-    }
-
-    for (i = 0; i < 4; i++) {
-        for (j = 2; j >= 0; j--) {
+        if(deltaY<0){ 0="" if="" (moveup()){="" settimeout(generateonenumber(),210);="" settimeout(isgameover(),1000);="" }="" up="" else{="" (movedown()){="" down="" });="" function="" isgameover(){="" if(nomove(board)){="" gameover();="" gameover(){="" var="" nn="Math.ceil(Math.random()*4);" switch(nn){="" case="" 1:alert('404\n⚠️not="" found');="" break;="" 2:alert('胜败乃兵家常事\n少侠请重新来过');="" 3:="" alert('修仙有风险\n路上需谨慎');="" 4:="" alert('性❤️感🔞2048\n在🌹线🌹合👄体👄');="" default:="" moveleft()="" {="" (!canmoveleft(board))="" return="" false;="" for="" (i="0;" i="" <="" 4;="" i++)="" (j="1;" j="" j++)="" (board[i][j]="" !="0)" (k="0;" k="" j;="" k++)="" (board[i][k]="=" &&="" noblockhorizontalx(i,="" k,="" j,="" board))="" $('#audio2').removeattr('muted','');="" showmoveanimation(i,="" i,="" k);="" board[i][k]="board[i][j];" console.log('左边为零的情况');="" board[i][j]="0;" continue;="" else="" board)&&flag="=0)" +="board[i][j];" console.log('左边相等的情况');="" score+="board[i][k];" updatescore(score);="" flag="1;" settimeout('updateboardview()',200);="" true;="" moveright()="" (!canmoveright(board))="">= 0; j--) {
             if (board[i][j] != 0) {
                 for (k = 3; k > j; k--) {
                     if (board[i][k] == 0 && noBlockHorizontalX(i, j, k, board)) {
@@ -334,8 +168,7 @@ function moveDown(){
     if(!canMoveDown(board)){
         return false;
     }
-    for(i=0;i<4;i++)
-        for(j=2;j>=0;j--){
+    for(i=0;i<4;i++) for(j="2;j">=0;j--){
             if(board[j][i]!=0){
                 for(k=3;k>j;k--){
                     if(board[k][i]==0&&noBlockHorizontalY(i, j, k, board)){
@@ -362,3 +195,4 @@ function moveDown(){
     setTimeout('updateBoardView()',200);
     return true;
 }
+</4;i++)></0){></50){></4;i++){>

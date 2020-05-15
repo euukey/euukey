@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>煎鱼的海</title>
+  
+  <subtitle>煎鱼的海</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://www.euukey.com/"/>
+  <updated>2020-04-21T09:26:25.592Z</updated>
+  <id>https://www.euukey.com/</id>
+  
+  <author>
+    <name>Euukey</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Tachiyomi：一款开源漫画阅读器(附下载)</title>
+    <link href="https://www.euukey.com/2020/04/20/tachiyomi-yi-kuan-kai-yuan-man-hua-yue-du-qi/"/>
+    <id>https://www.euukey.com/2020/04/20/tachiyomi-yi-kuan-kai-yuan-man-hua-yue-du-qi/</id>
+    <published>2020-04-19T17:12:42.000Z</published>
+    <updated>2020-04-21T09:26:25.592Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近补完某部烂尾番之后，吐槽完动画制作，最后只能去找漫画来看。</p><p>无意间在<a href="https://www.coolapk.com" target="_blank" rel="noopener">基安</a>发现了一个开源的漫画阅读器，于是下下来van了一番，发现还挺好用。<br><a id="more"></a><br>界面干净， 扩展需要kx上网才能显示，可手动安装（链接在文章后面）。</p><p>来几张图：</p><p><img src="/2020/04/20/tachiyomi-yi-kuan-kai-yuan-man-hua-yue-du-qi/sj.png" width="30%" height="30%"> &nbsp;<img src="/2020/04/20/tachiyomi-yi-kuan-kai-yuan-man-hua-yue-du-qi/ce.png" width="30%" height="30%"></p><h2 id="nbsp"><a href="#nbsp" class="headerlink" title=" &nbsp;"></a><img src="/2020/04/20/tachiyomi-yi-kuan-kai-yuan-man-hua-yue-du-qi/main.png" width="30%" height="30%"> &nbsp;<img src="/2020/04/20/tachiyomi-yi-kuan-kai-yuan-man-hua-yue-du-qi/kz.png" width="30%" height="30%"></h2><p>APP名为Tachiyomi，项目地址：<a href="https://github.com/inorichi/tachiyomi" target="_blank" rel="noopener">Github</a></p><p>目前只支持<strong>安卓平台</strong>，APP更新到0.8.5版本。</p><p><strong>APP下载</strong>（4.20更新）：</p><p>国内推荐<em>蓝奏云、Onedrive</em>下载。</p><p><a href="https://github.com/inorichi/tachiyomi/releases/download/v0.8.5/tachiyomi-v0.8.5.apk" target="_blank" rel="noopener">Github</a></p><p><a href="https://lanzous.com/b00zf328j" target="_blank" rel="noopener">蓝奏云</a></p><p><a href="https://pan.euukey.com/down/%E5%B7%A5%E5%85%B7%E8%BD%AF%E4%BB%B6/tachiyomi-v0.8.5.apk" target="_blank" rel="noopener">Onedrive</a></p><p><strong>扩展下载</strong>（4.20更新）：</p><p>所有扩展：</p><p><a href="https://github.com/inorichi/tachiyomi-extensions/tree/repo/apk" target="_blank" rel="noopener">Github</a></p><p><a href="https://lanzous.com/ibmcjcb" target="_blank" rel="noopener">蓝奏云</a></p><p>中文扩展合集:</p><p><a href="https://lanzous.com/b00zf34kd" target="_blank" rel="noopener">蓝奏云</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近补完某部烂尾番之后，吐槽完动画制作，最后只能去找漫画来看。&lt;/p&gt;
+&lt;p&gt;无意间在&lt;a href=&quot;https://www.coolapk.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;基安&lt;/a&gt;发现了一个开源的漫画阅读器，于是下下来van了一番，发现还挺好用。&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="漫画" scheme="https://www.euukey.com/tags/%E6%BC%AB%E7%94%BB/"/>
+    
+      <category term="APP" scheme="https://www.euukey.com/tags/APP/"/>
+    
+      <category term="安卓" scheme="https://www.euukey.com/tags/%E5%AE%89%E5%8D%93/"/>
+    
+      <category term="安利" scheme="https://www.euukey.com/tags/%E5%AE%89%E5%88%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ssh无法连接VPS</title>
+    <link href="https://www.euukey.com/2020/04/08/ssh-wu-fa-lian-jie-vps/"/>
+    <id>https://www.euukey.com/2020/04/08/ssh-wu-fa-lian-jie-vps/</id>
+    <published>2020-04-08T11:34:34.000Z</published>
+    <updated>2020-04-08T12:03:15.435Z</updated>
+    
+    <content type="html"><![CDATA[<p>下午打开MobaXterm准备连上意大利新机，发现ssh始终连不上。</p><a id="more"></a><p>我以为网络不好，等一会吧，毕竟有点远= =。</p><p>过了几个小时再次用ssh连接vps，发现还是连不上。于是ping了下，没问题。又打开机子上的网站，发现：</p><p><img src="/2020/04/08/ssh-wu-fa-lian-jie-vps/20200408-1.png" alt=""></p><p>数据库连不上了。</p><p>打开宝塔面板，看了下mysql，居然停止了。原来如此。于是兴致冲冲启动它，半天打不开。看了下日志：</p><pre><code>200408 20:54:50 [ERROR] Can&#39;t start server: Bind on TCP/IP port: Address already in use200408 20:54:50 [ERROR] Do you already have another mysqld server running on port: 3306 ?200408 20:54:50 [ERROR] Aborting</code></pre><p>原来端口被占用了啊……</p><p>马上到官网用提供的终端，敲了一行<code>lsof -i:3306</code>，看到<code>sshd</code>占用了3306端口。</p><p>想了想，昨晚在宝塔动过端口。就去看了下：<br><img src="/2020/04/08/ssh-wu-fa-lian-jie-vps/20200408-2.png" alt=""></p><p>原来一时疏忽把端口号加到宝塔的ssh上了……<br><img src="/2020/04/08/ssh-wu-fa-lian-jie-vps/20200408-3.png" alt=""></p><p>接下来好办了，把端口搞回去。<br>重启ssh：<code>service sshd restart</code><br>搞定。</p><p>以后还是得细心点……</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;下午打开MobaXterm准备连上意大利新机，发现ssh始终连不上。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="ssh" scheme="https://www.euukey.com/tags/ssh/"/>
+    
+      <category term="宝塔面板" scheme="https://www.euukey.com/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OLAINDEX船新版本的aria2离线下载</title>
+    <link href="https://www.euukey.com/2020/03/16/20200316-chuan-xin-ban-ben-de-aria2-chi-xian-xia-zai/"/>
+    <id>https://www.euukey.com/2020/03/16/20200316-chuan-xin-ban-ben-de-aria2-chi-xian-xia-zai/</id>
+    <published>2020-03-16T06:13:39.000Z</published>
+    <updated>2020-04-12T14:09:57.806Z</updated>
+    
+    <content type="html"><![CDATA[<p>在之前的<a href="https://www.euukey.com/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/">基于OLAINDEX搭建的网盘</a>中，用shell脚本调用OLAINDEX自带的上传功能来实现离线下载，但常常会出现文件下完没有上传的问题。<br>刚开始没在意，后来丢的文件一多，就去查看了log:</p><p><img src="/2020/03/16/20200316-chuan-xin-ban-ben-de-aria2-chi-xian-xia-zai/log.png" alt="log"></p><p>很明显，连接问题，作者也说明了离线下载功能是实验性的，不稳。</p><p>在一番寻找之后，终于发现了萌咖大佬的写得一个onedrive文件上传程序：<br><a href="https://github.com/MoeClub/OneList/tree/master/OneDriveUploader" target="_blank" rel="noopener">OneDriveUploader</a></p><p>马上试了下手动上传文件，稳稳地传好了大小文件。<br><a id="more"></a><br>离线下载有救了！</p><hr><h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><h3 id="授权"><a href="#授权" class="headerlink" title="授权"></a><strong>授权</strong></h3><p>国际版, 个人版(家庭版)：<br><a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=78d4dc35-7e46-42c6-9023-2d39314433a5&amp;response_type=code&amp;redirect_uri=http://localhost/onedrive-login&amp;response_mode=query&amp;scope=offline_access%20User.Read%20Files.ReadWrite.All" target="_blank" rel="noopener">点这里</a></p><p>中国版(世纪互联)：<br><a href="https://login.chinacloudapi.cn/common/oauth2/v2.0/authorize?client_id=dfe36e60-6133-48cf-869f-4d15b8354769&amp;response_type=code&amp;redirect_uri=http://localhost/onedrive-login&amp;response_mode=query&amp;scope=offline_access%20User.Read%20Files.ReadWrite.All" target="_blank" rel="noopener">点这里</a></p><p>登录授权后会获得一个<code>localhost</code>开头并且<code>无法打开</code>的链接，保存好链接，后面要用。</p><h3 id="安装OneDriveUploader"><a href="#安装OneDriveUploader" class="headerlink" title="安装OneDriveUploader"></a><strong>安装OneDriveUploader</strong></h3><p>直接运行命令下载，这里装到/usr/local/bin/</p><pre><code>64位系统下载wget https://raw.githubusercontent.com/MoeClub/OneList/master/OneDriveUploader/amd64/linux/OneDriveUploader -P /usr/local/bin/32位系统下载wget https://raw.githubusercontent.com/MoeClub/OneList/master/OneDriveUploader/i386/linux/OneDriveUploader -P /usr/local/bin/arm架构下载wget https://raw.githubusercontent.com/MoeClub/OneList/master/OneDriveUploader/arm/linux/OneDriveUploader -P /usr/local/bin/给予权限chmod +x /usr/local/bin/OneDriveUploader</code></pre><h3 id="初始化配置文件"><a href="#初始化配置文件" class="headerlink" title="初始化配置文件"></a>初始化配置文件</h3><pre><code>国际版：OneDriveUploader -a &quot;url&quot;个人版(家庭版)：OneDriveUploader -ms -a &quot;url&quot;中国版(世纪互联)：OneDriveUploader -cn -a &quot;url&quot;</code></pre><blockquote><p>在浏览器地址栏中获取以 <code>http://loaclhost</code> 开头的整个<code>url</code>内容<br>将获取的完整url内容替换命令中的 <code>url</code> 三个字母<br>每次产生的 <code>url</code> 只能用一次, 重试请重新获取 <code>url</code><br>此操作将会自动初始化的配置文件<br>提示 <code>Init config file: &#39;/path/to/auth.json&#39;</code> 则成功</p></blockquote><h3 id="配置自动上传"><a href="#配置自动上传" class="headerlink" title="配置自动上传"></a>配置自动上传</h3><p>这里的使用萌咖大佬的脚本。</p><p>新建一个<code>one-up.sh</code>文件，在文件中键入以下内容：</p><pre><code>#!/bin/bashGID=&quot;$1&quot;;FileNum=&quot;$2&quot;;File=&quot;$3&quot;;MaxSize=&quot;15728640&quot;;Thread=&quot;3&quot;;  #默认3线程，自行修改，服务器配置不好的话，不建议太多Block=&quot;20&quot;;  #默认分块20m，自行修改RemoteDIR=&quot;&quot;;  #上传到Onedrive的路径，默认为根目录LocalDIR=&quot;/www/download/&quot;;  #Aria2下载目录，记得最后面加上/Uploader=&quot;/usr/local/bin/OneDriveUploader&quot;;  #上传的程序完整路径，默认为本文安装的目录Config=&quot;/root/auth.json&quot;;  #初始化生成的配置auth.json绝对路径，参考第3步骤生成的路径if [[ -z $(echo &quot;$FileNum&quot; |grep -o &#39;[0-9]*&#39; |head -n1) ]]; then FileNum=&#39;0&#39;; fiif [[ &quot;$FileNum&quot; -le &#39;0&#39; ]]; then exit 0; fiif [[ &quot;$#&quot; != &#39;3&#39; ]]; then exit 0; fifunction LoadFile(){  if [[ ! -e &quot;${Uploader}&quot; ]]; then return; fi  IFS_BAK=$IFS  IFS=$&#39;\n&#39;  tmpFile=&quot;$(echo &quot;${File/#$LocalDIR}&quot; |cut -f1 -d&#39;/&#39;)&quot;  FileLoad=&quot;${LocalDIR}${tmpFile}&quot;  if [[ ! -e &quot;${FileLoad}&quot; ]]; then return; fi  ItemSize=$(du -s &quot;${FileLoad}&quot; |cut -f1 |grep -o &#39;[0-9]*&#39; |head -n1)  if [[ -z &quot;$ItemSize&quot; ]]; then return; fi  if [[ &quot;$ItemSize&quot; -ge &quot;$MaxSize&quot; ]]; then    echo -ne &quot;\033[33m${FileLoad} \033[0mtoo large to spik.\n&quot;;    return;  fi  ${Uploader} -c &quot;${Config}&quot; -t &quot;${Thread}&quot; -b &quot;${Block}&quot; -s &quot;${FileLoad}&quot; -r &quot;${RemoteDIR}&quot; -skip  if [[ $? == &#39;0&#39; ]]; then    rm -rf &quot;${FileLoad}&quot;;  fi  IFS=$IFS_BAK}LoadFile;</code></pre><p>保存后，修改权限：</p><p><code>chmod +x /root/one-up.sh</code></p><p><code>/root/one-up.sh</code>修改成你的文件路径</p><p>编辑aria2配置文件:</p><p><code>vi /root/.aria2/aria2.conf</code></p><p>按<code>i</code>进入插入模式，在文件中添加一句：</p><p><code>on-download-complete=/root/one-up.sh</code></p><p>按<code>Esc</code>，输入<code>:wq</code>保存退出。</p><p>重启aria2:</p><p><code>service aria2 restart</code></p><p>到这里离线下载就配置完成了，之后在aria2下载完成后会自动上传Onedrive中。</p><p>在我配置的过程中，发现文件正常下载并且可以手动上传，但不能自动上传。<br>排查后发现是编码的问题。</p><p>安装dos2unix:</p><p>Centos：<code>yum install dos2unix -y</code></p><p>Debian/Ubuntu：<code>apt install dos2unix -y</code></p><p>转换编码：</p><p><code>dos2unix /root/one-up.sh</code></p><p>这样就可以正常自动上传了。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在之前的&lt;a href=&quot;https://www.euukey.com/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/&quot;&gt;基于OLAINDEX搭建的网盘&lt;/a&gt;中，用shell脚本调用OLAINDEX自带的上传功能来实现离线下载，但常常会出现文件下完没有上传的问题。&lt;br&gt;刚开始没在意，后来丢的文件一多，就去查看了log:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2020/03/16/20200316-chuan-xin-ban-ben-de-aria2-chi-xian-xia-zai/log.png&quot; alt=&quot;log&quot;&gt;&lt;/p&gt;
+&lt;p&gt;很明显，连接问题，作者也说明了离线下载功能是实验性的，不稳。&lt;/p&gt;
+&lt;p&gt;在一番寻找之后，终于发现了萌咖大佬的写得一个onedrive文件上传程序：&lt;br&gt;&lt;a href=&quot;https://github.com/MoeClub/OneList/tree/master/OneDriveUploader&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;OneDriveUploader&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;马上试了下手动上传文件，稳稳地传好了大小文件。&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="教程" scheme="https://www.euukey.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="onedrive" scheme="https://www.euukey.com/tags/onedrive/"/>
+    
+      <category term="aria2" scheme="https://www.euukey.com/tags/aria2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>宝塔面板无法访问？</title>
+    <link href="https://www.euukey.com/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/"/>
+    <id>https://www.euukey.com/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/</id>
+    <published>2020-03-11T16:05:51.000Z</published>
+    <updated>2020-03-11T17:04:21.312Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天准备访问阿里云ecs上的宝塔面板，谁知道半天进不去。</p><p>换了Edge浏览器,照样无法访问。让原本想搞事的我十分郁闷。</p><p>于是先ping服务器，咩问题。</p><p>又去看了安全组，端口正常开放。<br><a id="more"></a></p><p>左思右想，准备手动启动宝塔。</p><p>在ssh敲了<code>/etc/init.d/bt start</code>，发现是宝塔自动任务的问题，<code>task.py</code>少了模块。<br><img src="/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/bt-error.png" alt="bt"></p><p>原来是这小问题。</p><p><img src="/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/jiuzhe.jpg" alt="jz"></p><p>简单！直接pip装上模块。再start一遍面板。</p><p>嗯？怎么还有？？没事，接着装模块。反反复复红红火火恍恍惚惚。</p><p>装着装着，越觉得不对劲，甚至想直接重装面板。</p><p>之前咋没有这毛病？</p><p><img src="/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/wenhao.jpg" alt="?"></p><p>突然想起之前为了能跑python，把默认的python2.7手动改成了python3.6。应该是这个问题！</p><p>于是借助网络的力量，找到了快速切换python版本的办法。</p><hr><p>先看看有哪些版本的python</p><p><code>ls /usr/bin/python*</code></p><p><img src="/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/python-v.png" alt="py"></p><p>查看python替换版本信息</p><p><code>update-alternatives --list python</code></p><p>结果出现了:</p><p><code>update-alternatives: error: no alternatives for python</code></p><p>替换版本未被识别。更新替换版本来解决：</p><pre><code>update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1update-alternatives --install /usr/bin/python python /usr/bin/python3.6 2</code></pre><p>接着查看替换效果：</p><p><code>update-alternatives --config python</code></p><p><img src="/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/python2.png" alt="py"></p><p>输入1切换回2.7版本。此时再查看python版本：</p><p><code>python --version</code></p><p><img src="/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/python-ver.png" alt="py"></p><p>切换完成！！</p><p>这时再restart一下面板：</p><p><code>/etc/init.d/bt restart</code></p><p><img src="/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/bt.png" alt="bt"></p><p>再访问一下面板域名：</p><p><img src="/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/bt-login.png" alt="bt-log"></p><p>大功告成！！!<br><img src="/2020/03/12/bao-ta-mian-ban-wu-fa-fang-wen/kx.png" alt="kx"></p><p>最后今天植树节去蚂蚁森林种种树。</p><hr><p><strong>参考：</strong></p><blockquote><p><a href="https://www.cnblogs.com/Yanfang20180701/p/10588087.html" target="_blank" rel="noopener">https://www.cnblogs.com/Yanfang20180701/p/10588087.html</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天准备访问阿里云ecs上的宝塔面板，谁知道半天进不去。&lt;/p&gt;
+&lt;p&gt;换了Edge浏览器,照样无法访问。让原本想搞事的我十分郁闷。&lt;/p&gt;
+&lt;p&gt;于是先ping服务器，咩问题。&lt;/p&gt;
+&lt;p&gt;又去看了安全组，端口正常开放。&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://www.euukey.com/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://www.euukey.com/tags/python/"/>
+    
+      <category term="宝塔面板" scheme="https://www.euukey.com/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>超星慕课视频爬虫批量下载</title>
+    <link href="https://www.euukey.com/2020/03/04/chao-xing-mu-ke-shi-pin-pa-chong-pi-liang-xia-zai/"/>
+    <id>https://www.euukey.com/2020/03/04/chao-xing-mu-ke-shi-pin-pa-chong-pi-liang-xia-zai/</id>
+    <published>2020-03-04T08:32:22.000Z</published>
+    <updated>2020-03-09T10:37:44.859Z</updated>
+    
+    <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=429460399&auto=0&height=66"></iframe><p><em>时隔多年，重操旧业。</em></p><p>今年受疫情影响，学校上课采用了在线教学。当然没课的人是体会不到那种“<strong>乐趣</strong>”的。</p><p>偶然间学妹说某课的教学视频在B站上下架了，看不了视频。</p><p>我本着乐于助人的态度，想着这种时候怎么可以怠惰，一定得让学弟学妹上好课。</p><p><img src="/2020/03/04/chao-xing-mu-ke-shi-pin-pa-chong-pi-liang-xia-zai/ryss.jpg" alt="ryss"></p><a id="more"></a><p>首先思量着怎么去找到这视频，在一番操作无果之后，最终还是屈服于<strong>国内第一搜索引擎</strong>。</p><p>在多次筛选后找到了视频来源：<strong>超星慕课</strong>，视频可以在线观看，课程视频数量<strong>过百</strong>。</p><p>接着又想着把视频捣鼓到自己的电脑上看。</p><p>说干就干。</p><p>最先考虑的是IDM自带的网站探索。然而探半天没探出个什么所以然。</p><p>想了想手上能拿得出手的相应的技能也就<del>炙手可热</del>风靡各行各业的python。</p><p>干了兄弟萌！OLG!<br><img src="/2020/03/04/chao-xing-mu-ke-shi-pin-pa-chong-pi-liang-xia-zai/olg.jpg" alt="[OLG]"></p><p>于是花了一个晚上和第二天的时间重温了一下这门手艺，成功爬下了视频。</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>github：<br><a href="https://github.com/euukey/cx-mooc-downloader" target="_blank" rel="noopener">https://github.com/euukey/cx-mooc-downloader</a></p><p>（代码编排还挺糟糕，但注释还挺仔细的。）</p><pre><code>from bs4 import BeautifulSoup          # 要自行安装的模块之一import requestsimport reimport randomfrom fake_useragent import UserAgent   # 要自行安装的模块之一import timeimport osimport shutil#链接课程网站url = input(&quot;输入超星视频课程页面链接[如:http://mooc1.chaoxing.com/course/161102.html]：&quot;)#伪装uafake_ua = UserAgent()headers = {&#39;User-Agent&#39;:fake_ua.random} # 随机生成uar = requests.get(url,headers = headers)soup = BeautifulSoup(r.text, &#39;html.parser&#39;)# 创建保存视频的文件夹save_dir = &#39;D:/&#39;+soup.title.text #保存路径if os.path.exists(save_dir):    shutil.rmtree(save_dir) #清空文件夹os.mkdir(save_dir)#  课程链接列表url_list = []#搜索所有章节链接，并添加到列表中for link in soup.find_all(href=re.compile(&quot;nodedetailcontroller&quot;)):    course = link.get(&#39;href&#39;)    url_list.append(&#39;http://mooc1.chaoxing.com&#39;+course)  #补全链接#文件编号num = 1# 遍历所有链接下载print(&quot;开始下载视频！默认下载到D盘。&quot;)for v_url in url_list:    v_r = requests.get(v_url, headers=headers)    v_soup = BeautifulSoup(v_r.text, &#39;html.parser&#39;)    # 搜索视频id    for dict in v_soup.find_all(&#39;iframe&#39;):        data = eval(dict.get(&#39;data&#39;))    # 下载    print(&#39;downloading……&#39;)    req = requests.get(&#39;http://d0.ananas.chaoxing.com/download/&#39; + data[&#39;objectid&#39;], headers=headers)    with open(save_dir+&#39;/&#39;+str(num)+&#39;.&#39;+v_soup.find(id=&quot;nodeTitleEle&quot;).text + &#39;.mp4&#39;, &quot;wb&quot;) as f:# 标题:soup.find(id=&quot;nodeTitleEle&quot;).text        f.write(req.content)    print(v_soup.find(id=&quot;nodeTitleEle&quot;).text+&#39;complete！&#39;)    time.sleep(5+random.randint(1,11)) # 随机添加访问间隔    num+=1print(&quot;所有视频下载完成！&quot;)</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;id=429460399&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;
+
+
+&lt;p&gt;&lt;em&gt;时隔多年，重操旧业。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;今年受疫情影响，学校上课采用了在线教学。当然没课的人是体会不到那种“&lt;strong&gt;乐趣&lt;/strong&gt;”的。&lt;/p&gt;
+&lt;p&gt;偶然间学妹说某课的教学视频在B站上下架了，看不了视频。&lt;/p&gt;
+&lt;p&gt;我本着乐于助人的态度，想着这种时候怎么可以怠惰，一定得让学弟学妹上好课。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2020/03/04/chao-xing-mu-ke-shi-pin-pa-chong-pi-liang-xia-zai/ryss.jpg&quot; alt=&quot;ryss&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="python" scheme="https://www.euukey.com/tags/python/"/>
+    
+      <category term="超星" scheme="https://www.euukey.com/tags/%E8%B6%85%E6%98%9F/"/>
+    
+      <category term="爬虫" scheme="https://www.euukey.com/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>aria2+ariaNG+OLAINDEX搭建可离线下载的网盘</title>
+    <link href="https://www.euukey.com/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/"/>
+    <id>https://www.euukey.com/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/</id>
+    <published>2020-02-16T07:12:48.000Z</published>
+    <updated>2020-04-12T14:09:21.114Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近被迫宅在家闲来无事，就搞了个VPS玩玩。找了几圈，发现个比较实用的用法：</p><p><strong>搭建一个基于OLAINDEX+onedrive的网盘，可通过aria2离线下载。</strong><br><a id="more"></a></p><p>（onedrive作为微软旗下的云存储产品，速度质量比起某毒盘不知道高到哪里去了。）</p><p><br><br><br></p><h2 id="为什么选择OLAINDEX"><a href="#为什么选择OLAINDEX" class="headerlink" title="为什么选择OLAINDEX"></a><strong>为什么选择OLAINDEX</strong></h2><p>OLAINDEX受ONEINDEX启发，也是一款onedrive目录索引应用，相比之下功能较多，界面美观（多主题可选），还适配了pad端、移动端。</p><h2 id="界面预览"><a href="#界面预览" class="headerlink" title="界面预览:"></a><strong>界面预览:</strong></h2><ul><li><a href="https://pan.euukey.com/" target="_blank" rel="noopener">演示地址</a></li><li>图片：</li></ul><div align="center"><br><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/pc.png" alt="PC"><br><br><strong>PC端</strong><br><br><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/mobile.png" alt="mobile"><br><br><strong>移动端</strong><br><br><br><br><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/pad.png" alt="pad"><br><br><strong>pad端</strong><br></div><hr><p><br></p><p><em><strong>*本教程基于Ubuntu18.04，其他系统仅供参考</strong></em><br> <br></p><font size="6"><strong>准备工作</strong></font><blockquote><ol><li>一个VPS（推荐国外）</li><li>一个onedrive账号（最好是1T以上。）</li><li>三个域名（子域名也可）</li><li>一颗耐心</li></ol></blockquote><p>三个域名我用的是子域名，分别为<code>dl.xx.com【可选】</code>、<code>bt.xx.com【可选】</code>、<code>pan.xx.com</code>，在域名后台添加三条记录指向你的VPS的IP。如图：</p><div align="center"><br> <img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/dns.png" alt="dns"><br></div><font size="6"><strong>安装宝塔面板</strong></font><p>Centos</p><pre><code>yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; sh install.sh</code></pre><p>Ubuntu/Deepin</p><pre><code>wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; sudo bash install.sh</code></pre><p>安装完成后会显示信息：</p><pre><code>Bt-Panel: http://你的vps的ip:8888username: xxxxpassword: ****</code></pre><p>访问地址进入宝塔面板后台，左侧选择<code>面板设置</code>进行相关设置：</p><ul><li>修改登录账号密码;</li><li>【可选】绑定事先准备好的<code>bt.xx.com</code>，以后访问面板直接输入：<code>bt.xx.com:8888/xxx</code><br><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/bt1.png" alt="面板设置"><br></div><br><br></li></ul><font size="6"><strong>配置环境</strong></font><ul><li>php7.1以上</li></ul><p>在宝塔面板左侧<code>软件管理</code>搜索安装，这里安装<code>php7.2</code>和<code>nginx 1.8</code>。</p><p><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/bt2.png" alt="面板设置"><br></div><br><br></p><p>待安装完成之后，开始配置php。<br>点最右边的<code>设置</code>，再点开<code>安装扩展</code>，安装<code>fileinfo</code>和<code>opcache</code>。</p><p><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/bt3.png" alt="面板设置"><br></div><br><br><br>之后再点<code>禁用函数</code>：<br>把<code>exec</code>、 <code>shell_exec</code>、 <code>proc_open</code>、<code>proc_get_status</code> 和<code>putenv</code>删除。重启PHP。</p><p><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/bt4.png" alt="面板设置"><br></div><br><br></p><p><strong>安装composer：</strong><br>宝塔面板已经默认安装composer，不放心得话可以通过以下命令安装：</p><pre><code>curl -sS https://getcomposer.org/installer | phpmv composer.phar /usr/local/bin/composer</code></pre><p><br></p><font size="6"><strong>安装OLAINDEX</strong></font><p><strong>网站配置</strong><br>打开宝塔面板，点击左侧<code>网站</code>，再点<code>添加站点</code>：</p><p><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/bt5.png" alt="面板设置"><br></div><br><br><br>在域名框输入事先准备好的<code>pan.xx.com</code>，下面的php版本选择<code>php7.2</code>，提交。</p><p><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/bt6.png" alt="面板设置"><br></div><br><br><br>到此，我们的网盘网站在vps上目录为<code>/www/wwwroot/pan.xx.com</code>。<br>接着，我在命令行输入以下命令：</p><pre><code>cd /www/wwwroot/pan.xx.com #跳转到网盘站点目录git clone https://github.com/WangNingkai/OLAINDEX.git tmpmv tmp/.git .rm -rf tmpgit reset --hardcp database/database.sample.sqlite database/database.sqlite  # 数据库文件composer install -vvv # 这里测试是否成功安装composerchmod -R 777 storage/chown -R www:www *  # 此处 www 根据服务器具体用户组而定php artisan od:install  #这里一定完整输入https://+你的网盘域名，如：https://pan.xx.com</code></pre><p><br><br><strong>站点具体设置</strong><br>打开宝塔面板，点击左侧<code>网站</code>，点开<code>pan.xx.com</code>最右边的<code>设置</code>，运行目录改为<code>/public</code>，保存。</p><p><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/bt7.png" alt="面板设置"><br></div><br><br><br>再点开<code>伪静态</code>，最上面选择<code>laravel5</code>，保存。</p><p><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/bt8.png" alt="面板设置"><br></div><br><br></p><p>接着点开<code>配置文件</code>，注释47行至59行内容，防止图片出现404。</p><p><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/bt9.png" alt="面板设置"><br></div><br><br></p><p>然后点开<code>SSL</code>，选择<code>Let&#39;s Encrypt</code>，输入自己的邮箱，打钩域名，然后<code>申请</code>。<br>成功后显示如图，并点开<code>强制HTTPS</code>。</p><p><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/bt10.png" alt="面板设置"><br></div><br><br></p><font size="6"><strong>绑定onedrive</strong></font><p>打开<code>pan.xx.com</code>,在<code>申请</code>中的<code>redirect_uri</code>确认地址为：<br><code>https://pan.xx.com/oauth</code>，点击<code>申请</code>。<br>会跳转到申请页面，登录onedrive账号授权，复制<code>应用机密</code>，接着点<code>知道了，返回到快速启动</code>。在新的页面中找到应用ID，复制。</p><p><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/onedrive1.png" alt="onedrive绑定"><br></div><br><br></p><p><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/onedrive2.png" alt="onedrive绑定"><br></div><br><br><br>返回到绑定页面，在<code>client_id</code>和<code>client_secret</code>填入刚刚复制的<code>应用id</code>和<code>应用机密</code>。<br>点击<code>保存</code>，跳转绑定页面，绑定就ok了。</p><blockquote><p>Tip：如果绑定页面是空的，在vps上运行以下命令：</p><pre><code>cd /www/wwwroot/pan.xx.com #记得替换成你的站点chmod 777 -R storage/* database/*</code></pre><p><strong>该命令同样适用于<code>500|错误</code></strong><br><br></p></blockquote><p>成功绑定，可以访问网盘主页了。</p><pre><code>#后台管理https://pan.xx.com/admin#初始密码12345678</code></pre><p>其他：</p><pre><code>#重置全部数据，删除数据库数据php artisan od:reset#重置OneDrive登陆账号php artisan od:logout#升级程序git pullcomposer install -vvvphp artisan od:update</code></pre><p><br></p><p><font size="6"><strong>配置aria2</strong></font><br><br><br><strong>aria2 安装</strong><br><br><br>打开vps，输入:</p><pre><code># 这里使用逗比的一键脚本，还可以自动更新tracker。wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/aria2.sh &amp;&amp; chmod +x aria2.sh &amp;&amp; bash aria2.sh# 备用地址moeratswget -N --no-check-certificate https://www.moerats.com/usr/shell/Aria2/aria2.sh &amp;&amp; chmod +x aria2.sh &amp;&amp; bash aria2.sh</code></pre><p><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/aria2-2.png" alt="onedrive绑定"><br></div><br><br><br>接着输入<code>1</code>安装aria2，回车。版本选择的地方直接回车。<br>安装完成后，会显示aria2信息，记得保存。<br>如果忘记配置信息，也可输入<code>8</code>查看。<br>输入<code>10</code>配置自动更新 BT-Tracker服务器,加速bt下载。</p><pre><code>Aria2 简单配置信息： 地址   : **.**.**.** 端口   : 6800 密码   : ************** 目录   : /usr/local/caddy/www/aria2/Download</code></pre><p><br><br><strong>【可选】ariaNg配置和aria2其他设置</strong></p><p><br><br>打开宝塔面板，选择<code>网站</code>，<code>添加站点</code>，域名填入事先准备好的<code>dl.xx.com</code>，php版本选择<code>纯静态</code>，提交。</p><p><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/aria2-1.png" alt="onedrive绑定"><br></div><br><br></p><pre><code>#跳转到dl网站目录cd /www/wwwroot/dl.xx.com#下载ariaNgwget https://github.com/mayswind/AriaNg/releases/download/1.1.5/AriaNg-1.1.5-AllInOne.zip#安装unzipapt install unzip#解压unzip AriaNg-1.1.5-AllInOne.zip#删除下载文件rm -rf AriaNg-1.1.5-AllInOne.zip</code></pre><p>访问<code>dl.xx.com</code>，显示未连接。选择左侧<code>ariaNg设置</code>，右侧选择<code>RPC(dl.xx.com)</code></p><p><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/aria2-3.png" alt="onedrive绑定"><br></div><br><br><br>输入配置信息，刷新页面，左下角显示已连接。</p><p><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/aria2-4.png" alt="onedrive绑定"><br></div><br><br><br>再选择左侧<code>aria2设置</code>&gt;<code>BitTorrent 设置</code>，拉到最下面，<code>最小做种时间</code>输入0。</p><p><div align="center"><br><img src="/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/aria2-5.png" alt="onedrive绑定"><br></div><br><br><br><strong>自动下载上传（离线下载）</strong></p><p><a href="https://www.euukey.com/2020/03/16/20200316-chuan-xin-ban-ben-de-aria2-chi-xian-xia-zai/">&gt;&gt;&gt;0316已更新船新版本&lt;&lt;&lt;</a></p><p>打开宝塔面板，选择左侧<code>文件</code>，跳转到<code>/root/.aria2</code>目录下，新建一个<code>up.sh</code>。<br>编辑<code>up.sh</code>，输入：</p><pre><code>#!/bin/bashdownloadpath=&#39;/usr/local/caddy/www/aria2/Download&#39;   #修改成Aria2下载文件夹folder=&#39;/lixian&#39;   #上传至网盘里的文件夹(自动创建)if [ $2 -eq 0 ];then    exit 0fipath=$3   #取原始路径olaindex=`find /www/wwwroot -name artisan`   #OLAINDEX的artisan文件的绝对路径while(true);do   #path被赋值为Aria2下载目录，filepath被赋值为下载文件的绝对路径或第一层目录    filepath=&quot;$path&quot;    path=&quot;${path%/*}&quot;    if [ &quot;$path&quot; = &quot;$downloadpath&quot; ] &amp;&amp; [ $2 -eq 1 ];then   #单文件        php $olaindex od:upload &quot;$filepath&quot; &quot;$folder/&quot;   #上传        rm -rf &quot;$filepath&quot; &quot;$filepath.aria2&quot; &quot;$path/*.torrent&quot;   #删除        php $olaindex od:cache   #刷新        exit 0    elif [ &quot;$path&quot; = &quot;$downloadpath&quot; ];then   #文件夹        cd &quot;$filepath&quot;        for file in *;do   #第一层目录            php $olaindex od:upload &quot;$file&quot; &quot;$folder/${filepath##*/}&quot;            rm -rf &quot;$file&quot;        done        for file in */* */*/*;do   #第二、三层目录            php $olaindex od:upload &quot;$file&quot; &quot;$folder/${filepath##*/}/${file%/*}&quot;            rm -rf &quot;$file&quot;        done        rm -rf &quot;$filepath&quot; &quot;$filepath.aria2&quot; &quot;$path/*.torrent&quot;        php $olaindex od:cache        exit 0    fidone</code></pre><p>保存，然后编辑aria2配置文件:</p><p><code>vi /root/.aria2/aria2.conf</code></p><p>按<code>i</code>进入插入模式，在文件中添加一句：</p><p><code>on-download-complete=/root/.aria2/up.sh</code></p><p>按<code>Esc</code>，输入<code>:wq</code>保存退出。</p><p>重启aria2:</p><p><code>service aria2 restart</code></p><p>这样下载文件到vps后会上传到onedrive再删除vps上的文件。</p><p><strong>到此，可离线在线观看视频的网盘搭建完成！</strong></p><p><strong>参考：</strong></p><blockquote><p><a href="https://github.com/WangNingkai/OLAINDEX" target="_blank" rel="noopener">https://github.com/WangNingkai/OLAINDEX</a><br><a href="https://imwnk.cn/archives/bt-olaindex" target="_blank" rel="noopener">https://imwnk.cn/archives/bt-olaindex</a><br><a href="https://www.jianshu.com/p/4e5bee06ad74" target="_blank" rel="noopener">https://www.jianshu.com/p/4e5bee06ad74</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近被迫宅在家闲来无事，就搞了个VPS玩玩。找了几圈，发现个比较实用的用法：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;搭建一个基于OLAINDEX+onedrive的网盘，可通过aria2离线下载。&lt;/strong&gt;&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="教程" scheme="https://www.euukey.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="onedrive" scheme="https://www.euukey.com/tags/onedrive/"/>
+    
+      <category term="OLAINDEX" scheme="https://www.euukey.com/tags/OLAINDEX/"/>
+    
+      <category term="aria2" scheme="https://www.euukey.com/tags/aria2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自整理1.3G免费商用中文字体</title>
+    <link href="https://www.euukey.com/2019/10/12/20191012-zi-ti-zheng-li/"/>
+    <id>https://www.euukey.com/2019/10/12/20191012-zi-ti-zheng-li/</id>
+    <published>2019-10-12T13:27:36.003Z</published>
+    <updated>2020-02-17T04:49:15.477Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近重装系统后安装字体时，突然想到某些字体侵权的案例。</p><p>于是花了一个晚上的时间，把目前（2019.10.11）市面上大部分的免费商用中文字体整理了一下，分享给需要的人。</p><a id="more"></a><p>天翼云：<br><a href="https://cloud.189.cn/t/UBZFNvMZRVvm" title="hhh" target="_blank" rel="noopener">戳我下载</a><br><strong>【访问码：5518】</strong></p><p>我的网盘：<br><a href="https://pan.euukey.com/home/%E5%AD%97%E4%BD%93" title="字体" target="_blank" rel="noopener">戳我下载</a></p><h3 id="2019-12-04更新"><a href="#2019-12-04更新" class="headerlink" title="2019.12.04更新"></a><strong>2019.12.04更新</strong></h3><ul><li>新增<strong>问藏书房字体</strong></li></ul><h3 id="2019-11-24更新"><a href="#2019-11-24更新" class="headerlink" title="2019.11.24更新"></a><strong>2019.11.24更新</strong></h3><ul><li>新增<strong>oppo免费商用字体</strong></li></ul><h3 id="附字体清单（20191011）"><a href="#附字体清单（20191011）" class="headerlink" title="附字体清单（20191011）"></a><strong>附字体清单（20191011）</strong></h3><ul><li><p>851手书杂体</p></li><li><p>fandol破产字体</p></li><li><p>KanjyukuGothic</p></li><li><p>SmartFontUI</p></li><li><p>UtsukushiMincho</p></li><li><p>阿里普惠体</p></li><li><p>安卓</p></li><li><p>包图小白体</p></li><li><p>东风明朝</p></li><li><p>汉仪贤二体</p></li><li><p>花园明朝体</p></li></ul><ul><li>刻石录钢笔鹤体</li><li>刻石录明体</li><li>刻石录颜体</li></ul><ul><li>濑户字体</li></ul><ul><li><p>涟漪明朝体</p></li><li><p>沐瑶软笔手写体</p></li><li><p>旁门正道标题体</p></li><li><p>清松手写体</p></li><li><p>锐字真言体</p></li></ul><ul><li>思源黑体</li><li>思源柔黑</li><li>思源柔黑（凤殿强化版2.8）</li><li>思源宋体</li></ul><ul><li>台湾教育部标准楷书</li><li>台湾教育部标准隶书</li><li>台湾教育部标准宋体</li></ul><ul><li>台湾明体</li></ul><ul><li>台湾全字库说文解字</li><li>台湾全字库正楷体</li><li>台湾全字库正宋体</li></ul><ul><li>王汉宗中仿宋简</li><li>王汉宗中仿宋繁</li><li>王汉宗中明体注音</li><li>王汉宗中明体破音一</li><li>王汉宗中明体破音三</li><li>王汉宗中明体破音二</li><li>王汉宗中明体繁</li><li>王汉宗中楷体注音</li><li>王汉宗中楷体破音一</li><li>王汉宗中楷体破音三</li><li>王汉宗中楷体破音二</li><li>王汉宗中行书繁</li><li>王汉宗中隶书繁</li><li>王汉宗中魏碑简</li><li>王汉宗仿宋体-标准</li><li>王汉宗勘亭流繁</li><li>王汉宗新潮体-波浪</li><li>王汉宗标楷体-空心</li><li>王汉宗波卡体-空阴</li><li>王汉宗海报体-半天水</li><li>王汉宗特圆体繁</li><li>王汉宗特明体-标准</li><li>王汉宗特明体繁</li><li>王汉宗特黑体繁</li><li>王汉宗空叠圆繁</li><li>王汉宗粗圆体-双空</li><li>王汉宗粗明体繁</li><li>王汉宗粗楷体简</li><li>王汉宗粗钢体-标准</li><li>王汉宗粗黑体-实阴</li><li>王汉宗细圆体繁</li><li>王汉宗细新宋简</li><li>王汉宗细明体繁</li><li>王汉宗细黑体繁</li><li>王汉宗综艺体-双空阴</li><li>王汉宗综艺体繁</li><li>王汉宗超明体繁</li><li>王汉宗超黑体俏皮动物一</li><li>王汉宗酷俪海报</li><li>王汉宗酷正海报</li><li>王汉宗钢笔行楷繁</li><li>王汉宗颜楷体繁</li></ul><ul><li>文泉驿微米黑</li><li>文泉驿正黑</li><li>文泉驿等宽微米黑</li><li>文泉驿等宽正黑</li></ul><ul><li><p>杨任东竹石体</p></li><li><p>源界明朝</p></li><li><p>源流明体</p></li><li><p>源样明体</p></li><li><p>源云明体</p></li></ul><ul><li>站酷小薇LOGO体</li><li>站酷庆科黄油体</li><li>站酷快乐体</li><li>站酷意大利体</li><li>站酷文艺体</li><li>站酷酷黑</li><li>站酷高端黑</li></ul><ul><li>装甲明朝</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近重装系统后安装字体时，突然想到某些字体侵权的案例。&lt;/p&gt;
+&lt;p&gt;于是花了一个晚上的时间，把目前（2019.10.11）市面上大部分的免费商用中文字体整理了一下，分享给需要的人。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="日常" scheme="https://www.euukey.com/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+      <category term="资源" scheme="https://www.euukey.com/categories/%E6%97%A5%E5%B8%B8/%E8%B5%84%E6%BA%90/"/>
+    
+    
+      <category term="资源" scheme="https://www.euukey.com/tags/%E8%B5%84%E6%BA%90/"/>
+    
+      <category term="字体" scheme="https://www.euukey.com/tags/%E5%AD%97%E4%BD%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>平安校园？这般平安</title>
+    <link href="https://www.euukey.com/2019/06/11/20190611-xin-wen-ping-lun/"/>
+    <id>https://www.euukey.com/2019/06/11/20190611-xin-wen-ping-lun/</id>
+    <published>2019-06-11T05:22:32.000Z</published>
+    <updated>2020-02-16T07:51:26.906Z</updated>
+    
+    <content type="html"><![CDATA[<p style="text-indent:2em">五月渐渐远去，迎来了今年夏天，开始今年的烈日炙烤。而在这季节交替之际，一则发生在山西的校园暴力事件引起人们的注意。事件发生在山西的太原师范学院，由受害人“芝芝”通过微博撰写文章《太原师范学院校园暴力》引发社会关注。“芝芝”文中提及自己和另一个室友龙同学长期受到另外两个室友的霸凌，发生口头冲突或是肢体冲突，甚至对其扒衣胁迫拍摄裸露视频并发布到群聊，导致当事人患上重度抑郁。发文一出，学校立即设立工作组进行深入调查。目前事件已经得到妥善解决，官方发文说明事件真实情况并且当事人“芝芝”删除微博言论和发布新微博回应。<a id="more"></a><br></p><p style="text-indent:2em">然而细心的人如果仔细观察，便可以发现是学校在息事宁人。在当事人“芝芝”发布的最新回应的微博中，手机型号“小尾巴”由三星S10换成了搜狗高速浏览器，很明显可能是学校官方强登账号发文或是要求“芝芝”当场发文。由此可见，事件并非得到妥善解决，而是被学校控制。对于此类结果，在国内的校园事件中或是已经习以为常。<br></p><p style="text-indent:2em">这让人不禁思索：平安校园真的平安吗？校园是教书育人的场所，古往今来多少能人将相都出自教学场所之中。而当代教书育人的主要场所——学校却频出状况。先有校园宿舍投毒、持刀刺死同学，后有教师性骚扰学生、学校私自招生无学籍，这些事件多如牛毛，但又如时间长流中的竹筏，只在此时漂过，事后杳无音信。学生在此中受害，学校甚至相关部门在此中受益，这是所有事件的共同之处。学生往往是事件的弱势一方，学校依仗公关团队和相关部门成为事件中无可厚非的强势一方，结果毫无疑问是所谓的妥善解决，在解决问题后，学校甚至能宣传自身，以便获得更多的生源。而此后校园等待着的，却是下一批无权无势的学生，而以往事件中的学生因种种束缚而难以言语而止于唇齿，似乎成了一种恶性循环。在校园随处可见的建设平安校园的标语，却成了一种无形讽刺。学生即时手持发言权，在网上发言，引发关注，可最后又如何呢？身在学校只能和学校“和解”，下一刻只能作无事人继续着校园生活，以往的所作所为成了他的一次难忘经历。<br><div align="center"><br><img src="/2019/06/11/20190611-xin-wen-ping-lun/teach.jpg" alt="teach"><br></div><br></p><p style="text-indent:2em">在这言论自由的时代，学生能够自由发文引起社会关注，但是之后呢？官方为名为利，或是编造理由平息事件，或是控制当事人自行“解铃”，真正解决问题的例子并不多。</p><br><p style="text-indent:2em">而依本人看来，平安校园的平安之处在于校方的保护。一旦校方打破了自己一手建立的保护规则，那么学生权益将受到侵害。在打破之后还以身份之优势加以平息，那么校园不再是校园了，而是一个巨大的囚牢。囚牢里的学生能做的事，要么向外面求救，要么在规章制度下继续生活。因此，若想将巨大囚牢复原成教书育人的平安场所，校方在解决校园问题时，就应当考虑学生的权益以及办学的宗旨，而不是盲目地将学校利益放于首位，这样只会让学生家长为之侧目和社会人士加以反感。对于权益受到侵害的学生，不能沉默无言，当然更不能一时冲动，藉由解决问题去大肆污名化学校，正确的做法应当是理性处理事情，在家长或是相关部门协助下于学校协商解决。而对于无可奈何的情况，可以向更高层的部门加以反映和通过网络向社会各界求助，拿起法律武器勇敢维权。此外，在法律法规方面，更应该有保护学生合法利益的条文规矩出现，并且将这些通过各教育部门落实在各学校上，这将是学生的最有力的保护。在建设平安校园上，学校不仅仅只是设立来访登记、排除安全隐患、安排巡逻人员的等等这些表面上的工作，更应该深入了解学生，给学生进行心理辅导，预防校园暴力，在授予知识的同时也要引导学生正确地为人处世。在对教职工的管理上更应该更为严格，坚决辞退品行不端的教职工，在有着优良品质作风的教职工前提下才可进行高品质教学，才可以对学生在另一层面加以保护。如此这般，校园才可避免变成囚牢。</p><br><p style="text-indent:2em">若以上各点得以实现，那么平安校园的未来指日可待！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p style=&quot;text-indent:2em&quot;&gt;五月渐渐远去，迎来了今年夏天，开始今年的烈日炙烤。而在这季节交替之际，一则发生在山西的校园暴力事件引起人们的注意。事件发生在山西的太原师范学院，由受害人“芝芝”通过微博撰写文章《太原师范学院校园暴力》引发社会关注。“芝芝”文中提及自己和另一个室友龙同学长期受到另外两个室友的霸凌，发生口头冲突或是肢体冲突，甚至对其扒衣胁迫拍摄裸露视频并发布到群聊，导致当事人患上重度抑郁。发文一出，学校立即设立工作组进行深入调查。目前事件已经得到妥善解决，官方发文说明事件真实情况并且当事人“芝芝”删除微博言论和发布新微博回应。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="新闻评论" scheme="https://www.euukey.com/tags/%E6%96%B0%E9%97%BB%E8%AF%84%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>中超联赛赛程（2016-2018）</title>
+    <link href="https://www.euukey.com/2018/12/24/20181224-zhong-chao-lian-sai-sai-cheng-2016-2018/"/>
+    <id>https://www.euukey.com/2018/12/24/20181224-zhong-chao-lian-sai-sai-cheng-2016-2018/</id>
+    <published>2018-12-23T16:00:00.000Z</published>
+    <updated>2019-04-08T13:09:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="中超联赛全赛程（2016-2018）"><a href="#中超联赛全赛程（2016-2018）" class="headerlink" title="中超联赛全赛程（2016-2018）"></a><strong>中超联赛全赛程（2016-2018）</strong></h1><p><img src="http://cs.sports.163.com/images/csllogo.png" alt="中超logo"></p><p>用python爬取的中超比赛数据，网页使用Navicat直接导出的（稍加修改）。</p><p>先祝各位圣诞快乐！</p><p>============================分割线=================================<br><a id="more"></a></p><p>点击年份查看</p><ul><li><strong> <a href="https://www.euukey.com/zc2016.html" title="2016">2016</a></strong></li><li><strong> <a href="https://www.euukey.com/zc2017.html" title="2017">2017</a></strong></li><li><strong> <a href="https://www.euukey.com/zc2018.html" title="2018">2018</a></strong></li></ul><p>（数据来源:<a href="http://cs.sports.163.com" title="网易中超" target="_blank" rel="noopener">网易中超</a>）</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;中超联赛全赛程（2016-2018）&quot;&gt;&lt;a href=&quot;#中超联赛全赛程（2016-2018）&quot; class=&quot;headerlink&quot; title=&quot;中超联赛全赛程（2016-2018）&quot;&gt;&lt;/a&gt;&lt;strong&gt;中超联赛全赛程（2016-2018）&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://cs.sports.163.com/images/csllogo.png&quot; alt=&quot;中超logo&quot;&gt;&lt;/p&gt;
+&lt;p&gt;用python爬取的中超比赛数据，网页使用Navicat直接导出的（稍加修改）。&lt;/p&gt;
+&lt;p&gt;先祝各位圣诞快乐！&lt;/p&gt;
+&lt;p&gt;============================分割线=================================&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Work" scheme="https://www.euukey.com/categories/Work/"/>
+    
+      <category term="python" scheme="https://www.euukey.com/categories/Work/python/"/>
+    
+    
+      <category term="Work" scheme="https://www.euukey.com/tags/Work/"/>
+    
+      <category term="python" scheme="https://www.euukey.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>First</title>
+    <link href="https://www.euukey.com/2018/12/19/20181219-first/"/>
+    <id>https://www.euukey.com/2018/12/19/20181219-first/</id>
+    <published>2018-12-18T16:00:00.000Z</published>
+    <updated>2020-04-12T14:13:59.302Z</updated>
+    
+    <content type="html"><![CDATA[<p></p><h1>看这里！！！！<br><a id="more"></a><p></p><p>建站第一文。</p><p>暂时还没想好搞什么。</p><p>以后看看吧，可以写写生活写写教程写写清单。</p><p>甚至写写作业。</p></h1>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;/p&gt;&lt;h1&gt;看这里！！！！&lt;br&gt;&lt;/h1&gt;
+    
+    </summary>
+    
+    
+      <category term="日常" scheme="https://www.euukey.com/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+      <category term="日常" scheme="https://www.euukey.com/tags/%E6%97%A5%E5%B8%B8/"/>
+    
+  </entry>
+  
+</feed>
