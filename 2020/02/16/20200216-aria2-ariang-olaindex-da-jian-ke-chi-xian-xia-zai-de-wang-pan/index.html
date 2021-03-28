@@ -1,0 +1,423 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>aria2+ariaNG+OLAINDEX搭建可离线下载的网盘 | 煎鱼的海</title><meta name="keywords" content="onedrive,OLAINDEX,aria2,ariaNg,olaindex,oneindex,离线下载,网盘,自建网盘"><meta name="author" content="Euukey"><meta name="copyright" content="Euukey"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="最近被迫宅在家闲来无事，就搞了个VPS玩玩。找了几圈，发现个比较实用的用法： 搭建一个基于OLAINDEX+onedrive的网盘，可通过aria2离线下载。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="aria2+ariaNG+OLAINDEX搭建可离线下载的网盘">
+<meta property="og:url" content="https://euukey.com/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/index.html">
+<meta property="og:site_name" content="煎鱼的海">
+<meta property="og:description" content="最近被迫宅在家闲来无事，就搞了个VPS玩玩。找了几圈，发现个比较实用的用法： 搭建一个基于OLAINDEX+onedrive的网盘，可通过aria2离线下载。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2020-02-16T07:12:48.000Z">
+<meta property="article:modified_time" content="2020-12-08T06:07:04.837Z">
+<meta property="article:author" content="Euukey">
+<meta property="article:tag" content="onedrive">
+<meta property="article:tag" content="OLAINDEX">
+<meta property="article:tag" content="aria2">
+<meta property="article:tag" content="ariaNg">
+<meta property="article:tag" content="olaindex">
+<meta property="article:tag" content="oneindex">
+<meta property="article:tag" content="离线下载">
+<meta property="article:tag" content="网盘">
+<meta property="article:tag" content="自建网盘">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/fav.png"><link rel="canonical" href="https://euukey.com/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?16040da32d0d21960c5dd1d3ba73100a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-12-08 14:07:04'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Euukey/euukey.github.io/css/iconfont.css"><meta itemprop="name" content="煎鱼的海 Euukey's Blog"><meta itemprop="image" content="http://152.32.215.170/avatar.png"><meta name="description" itemprop="description" content="人之帅，莫过于煎鱼"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="https://cdn.jsdelivr.net/gh/Euukey/euukey.github.io/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">40</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">煎鱼的海</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">aria2+ariaNG+OLAINDEX搭建可离线下载的网盘</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-02-16T07:12:48.000Z" title="发表于 2020-02-16 15:12:48">2020-02-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-08T06:07:04.837Z" title="更新于 2020-12-08 14:07:04">2020-12-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="aria2+ariaNG+OLAINDEX搭建可离线下载的网盘"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>最近被迫宅在家闲来无事，就搞了个VPS玩玩。找了几圈，发现个比较实用的用法：</p>
+<p><strong>搭建一个基于OLAINDEX+onedrive的网盘，可通过aria2离线下载。</strong></p>
+<span id="more"></span>
+
+<p>（onedrive作为微软旗下的云存储产品，速度质量比起某毒盘不知道高到哪里去了。）</p>
+<br>
+<br>
+## **为什么选择OLAINDEX**
+
+<p>OLAINDEX受ONEINDEX启发，也是一款onedrive目录索引应用，相比之下功能较多，界面美观（多主题可选），还适配了pad端、移动端。</p>
+<h2 id="界面预览"><a href="#界面预览" class="headerlink" title="界面预览:"></a><strong>界面预览:</strong></h2><ul>
+<li><a target="_blank" rel="noopener" href="https://pan.euukey.com/">演示地址</a></li>
+<li>图片：</li>
+</ul>
+<div align="center">
+
+<p><img src="pc.png" alt="PC"></p>
+<p><strong>PC端</strong></p>
+<p><img src="mobile.png" alt="mobile"></p>
+<p><strong>移动端</strong></p>
+<p><img src="pad.png" alt="pad"></p>
+<p><strong>pad端</strong></p>
+</div>
+
+
+
+<hr>
+<br>
+
+<p><em>*<strong>本教程基于Ubuntu18.04，其他系统仅供参考</strong></em><br> <br></p>
+<p><font size=6><strong>准备工作</strong></font></p>
+<blockquote>
+<ol>
+<li>一个VPS（推荐国外）</li>
+<li>一个onedrive账号（最好是1T以上。）</li>
+<li>三个域名（子域名也可）</li>
+<li>一颗耐心</li>
+</ol>
+</blockquote>
+<p>三个域名我用的是子域名，分别为<code>dl.xx.com【可选】</code>、<code>bt.xx.com【可选】</code>、<code>pan.xx.com</code>，在域名后台添加三条记录指向你的VPS的IP。如图：</p>
+<div align="center">
+ ![dns](dns.png)
+</div>
+
+
+
+<p><font size=6><strong>安装宝塔面板</strong></font></p>
+<p>Centos</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; sh install.sh</span><br></pre></td></tr></table></figure>
+<p>Ubuntu/Deepin</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh &amp;&amp; sudo bash install.sh</span><br></pre></td></tr></table></figure>
+<p>安装完成后会显示信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Bt-Panel: http://你的vps的ip:8888/xxx</span><br><span class="line">username: xxxx</span><br><span class="line">password: ****</span><br></pre></td></tr></table></figure>
+
+<p>访问地址进入宝塔面板后台，左侧选择<code>面板设置</code>进行相关设置：</p>
+<ul>
+<li>修改登录账号密码和安全入口;</li>
+<li>【可选】绑定事先准备好的<code>bt.xx.com</code>，以后访问面板直接输入：<code>bt.xx.com:8888/xxx</code><div align="center">
+![面板设置](bt1.png)
+</div>
+<br></li>
+</ul>
+<p><font size=6><strong>配置环境</strong></font></p>
+<ul>
+<li>php7.3及以上</li>
+<li>php扩展：【PHP OpenSSL 扩展】【PHP PDO 扩展】【PHP Mbstring 扩展】【PHP Tokenizer 扩展】【PHP XML 扩展】【PHP Ctype 扩展】【PHP JSON 扩展】【PHP BCMath 扩展】【PHP Fileinfo 扩展】</li>
+</ul>
+<p>在宝塔面板左侧<code>软件管理</code>搜索安装，这里安装<code>php7.3</code>和<code>nginx 1.18</code>。</p>
+<div align="center">
+![面板设置](bt2.png)
+</div>
+<br>
+
+<p>待安装完成之后，开始配置php。<br>点最右边的<code>设置</code>，再点开<code>安装扩展</code>，安装<code>fileinfo</code>和<code>opcache</code>。</p>
+<div align="center">
+![面板设置](bt3.png)
+</div>
+<br>
+之后再点`禁用函数`：
+把`exec`、 `shell_exec`、 `proc_open`、`proc_get_status` 和`putenv`移除。重启PHP。
+<div align="center">
+![面板设置](bt4.png)
+</div>
+<br>
+
+<p><strong>安装composer：</strong><br>宝塔面板已经默认安装composer，不放心得话可以通过以下命令安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -sS https://getcomposer.org/installer | php</span><br><span class="line">mv composer.phar /usr/<span class="built_in">local</span>/bin/composer</span><br></pre></td></tr></table></figure>
+<br>
+
+<p><font size=6><strong>安装OLAINDEX</strong></font></p>
+<p><strong>网站配置</strong><br>打开宝塔面板，点击左侧<code>网站</code>，再点<code>添加站点</code>：</p>
+<div align="center">
+![面板设置](bt5.png)
+</div>
+<br>
+在域名框输入事先准备好的`pan.xx.com`，下面的php版本选择`php7.3`，提交。
+<div align="center">
+![面板设置](bt6.png)
+</div>
+<br>
+到此，我们的网盘网站在vps上目录为`/www/wwwroot/pan.xx.com`。
+接着，我在命令行输入以下命令：
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /www/wwwroot/pan.xx.com <span class="comment">#跳转到网盘站点目录</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/WangNingkai/OLAINDEX.git tmp</span><br><span class="line">mv tmp/.git .</span><br><span class="line">rm -rf tmp</span><br><span class="line">git reset --hard</span><br><span class="line">composer install -vvv <span class="comment"># 这里测试是否成功安装composer</span></span><br><span class="line">chmod -R 777 storage/</span><br><span class="line">chown -R www:www *  <span class="comment"># 此处 www 根据服务器具体用户组而定</span></span><br><span class="line">composer run install-app <span class="comment">#出现权限错误请重新运行一遍 chmod -R 777 storage/</span></span><br></pre></td></tr></table></figure>
+<br>
+**站点具体设置**
+打开宝塔面板，点击左侧`网站`，点开`pan.xx.com`最右边的`设置`，运行目录改为`/public`，同时去掉`防跨站攻击`，保存。
+<div align="center">
+![面板设置](bt7.png)
+</div>
+<br>
+再点开`伪静态`，最上面选择`laravel5`，保存。
+<div align="center">
+![面板设置](bt8.png)
+</div>
+<br>
+
+<p>接着点开<code>配置文件</code>，注释47行至59行内容，防止图片出现404。</p>
+<div align="center">
+![面板设置](bt9.png)
+</div>
+<br>
+
+<p>然后点开<code>SSL</code>，选择<code>Let&#39;s Encrypt</code>，打钩域名，然后<code>申请</code>。<br>成功后显示如图，并点开<code>强制HTTPS</code>。</p>
+<div align="center">
+![面板设置](bt10.png)
+</div>
+<br>
+<font size=6>**绑定onedrive**</font>
+
+<p>打开后台<code>pan.xx.com/admin</code>,</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#账号</span></span><br><span class="line">admin</span><br><span class="line"><span class="comment">#初始密码</span></span><br><span class="line">123456</span><br></pre></td></tr></table></figure>
+<p>选择<code>账号列表</code>页面，点击<code>绑定账号</code>。</p>
+<div align="center">
+![onedrive绑定](bt11.png)
+</div>
+<br>
+在`申请`中的`redirect_uri`确认地址为：
+`https://pan.xx.com/callback`，点击`申请`。
+会跳转到申请页面，登录onedrive账号授权，复制`应用机密`，接着点`知道了，返回到快速启动`。在新的页面中找到应用ID，复制。
+<div align="center">
+![onedrive绑定](onedrive1.png)
+</div>
+<br>
+<div align="center">
+![onedrive绑定](onedrive2.png)
+</div>
+<br>
+返回到绑定页面，`redirect_uri`改为：`https://pan.xx.com/callback`，在`client_id`和`client_secret`填入刚刚复制的`应用id`和`应用机密`。
+点击`保存`，跳转绑定页面，绑定就ok了。
+
+<blockquote>
+<p>Tip：如果绑定页面是空的，在vps上运行以下命令：</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /www/wwwroot/pan.xx.com <span class="comment">#记得替换成你的站点</span></span><br><span class="line">chmod 777 -R storage/* database/*</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>该命令同样适用于<code>500|错误</code></strong><br><br></p>
+</blockquote>
+<p>成功绑定，可以访问网盘主页了。</p>
+<br>
+<font size=6>**配置aria2**</font>
+<br>
+**aria2 安装**
+<br>
+打开vps，输入:
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这里使用逗比的一键脚本，还可以自动更新tracker。</span></span><br><span class="line">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/aria2.sh &amp;&amp; chmod +x aria2.sh &amp;&amp; bash aria2.sh</span><br><span class="line"><span class="comment"># 备用地址moerats大佬</span></span><br><span class="line">wget -N --no-check-certificate https://www.moerats.com/usr/shell/Aria2/aria2.sh &amp;&amp; chmod +x aria2.sh &amp;&amp; bash aria2.sh</span><br></pre></td></tr></table></figure>
+<div align="center">
+![onedrive绑定](aria2-2.png)
+</div>
+<br>
+接着输入`1`安装aria2，回车。版本选择的地方直接回车。
+安装完成后，会显示aria2信息，记得保存。
+如果忘记配置信息，也可输入`8`查看。
+输入`10`配置自动更新 BT-Tracker服务器,加速bt下载。
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Aria2 简单配置信息：</span><br><span class="line"></span><br><span class="line"> 地址   : **.**.**.**</span><br><span class="line"> 端口   : 6800</span><br><span class="line"> 密码   : **************</span><br><span class="line"> 目录   : /usr/<span class="built_in">local</span>/caddy/www/aria2/Download</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<br>
+**【可选】ariaNg配置和aria2其他设置**
+
+<br>
+打开宝塔面板，选择`网站`，`添加站点`，域名填入事先准备好的`dl.xx.com`，php版本选择`纯静态`，提交。
+<div align="center">
+![onedrive绑定](aria2-1.png)
+</div>
+<br>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#跳转到dl网站目录</span></span><br><span class="line"><span class="built_in">cd</span> /www/wwwroot/dl.xx.com</span><br><span class="line"><span class="comment">#下载ariaNg</span></span><br><span class="line">wget https://github.com/mayswind/AriaNg/releases/download/1.1.5/AriaNg-1.1.5-AllInOne.zip</span><br><span class="line"><span class="comment">#安装unzip</span></span><br><span class="line">apt install unzip</span><br><span class="line"><span class="comment">#解压</span></span><br><span class="line">unzip AriaNg-1.1.5-AllInOne.zip</span><br><span class="line"><span class="comment">#删除下载文件</span></span><br><span class="line">rm -rf AriaNg-1.1.5-AllInOne.zip</span><br></pre></td></tr></table></figure>
+
+<p>访问<code>dl.xx.com</code>，显示未连接。选择左侧<code>ariaNg设置</code>，右侧选择<code>RPC(dl.xx.com)</code></p>
+<div align="center">
+![onedrive绑定](aria2-3.png)
+</div>
+<br>
+输入配置信息，刷新页面，左下角显示已连接。
+<div align="center">
+![onedrive绑定](aria2-4.png)
+</div>
+<br>
+再选择左侧`aria2设置`>`BitTorrent 设置`，拉到最下面，`最小做种时间`输入0。
+<div align="center">
+![onedrive绑定](aria2-5.png)
+</div>
+<br>
+**自动下载上传（离线下载）**
+
+<p><a target="_blank" rel="noopener" href="https://www.euukey.com/2020/03/16/20200316-chuan-xin-ban-ben-de-aria2-chi-xian-xia-zai/">&gt;&gt;&gt;0316已更新船新版本&lt;&lt;&lt;</a></p>
+<p>打开宝塔面板，选择左侧<code>文件</code>，跳转到<code>/root/.aria2</code>目录下，新建一个<code>up.sh</code>。<br>编辑<code>up.sh</code>，输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">downloadpath=<span class="string">&#x27;/usr/local/caddy/www/aria2/Download&#x27;</span>   <span class="comment">#修改成Aria2下载文件夹</span></span><br><span class="line">folder=<span class="string">&#x27;/lixian&#x27;</span>   <span class="comment">#上传至网盘里的文件夹(自动创建)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$2</span> -eq 0 ];<span class="keyword">then</span></span><br><span class="line">    <span class="built_in">exit</span> 0</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line">path=<span class="variable">$3</span>   <span class="comment">#取原始路径</span></span><br><span class="line">olaindex=`find /www/wwwroot -name artisan`   <span class="comment">#OLAINDEX的artisan文件的绝对路径</span></span><br><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>);<span class="keyword">do</span>   <span class="comment">#path被赋值为Aria2下载目录，filepath被赋值为下载文件的绝对路径或第一层目录</span></span><br><span class="line">    filepath=<span class="string">&quot;<span class="variable">$path</span>&quot;</span></span><br><span class="line">    path=<span class="string">&quot;<span class="variable">$&#123;path%/*&#125;</span>&quot;</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$path</span>&quot;</span> = <span class="string">&quot;<span class="variable">$downloadpath</span>&quot;</span> ] &amp;&amp; [ <span class="variable">$2</span> -eq 1 ];<span class="keyword">then</span>   <span class="comment">#单文件</span></span><br><span class="line">        php <span class="variable">$olaindex</span> od:upload <span class="string">&quot;<span class="variable">$filepath</span>&quot;</span> <span class="string">&quot;<span class="variable">$folder</span>/&quot;</span>   <span class="comment">#上传</span></span><br><span class="line">        rm -rf <span class="string">&quot;<span class="variable">$filepath</span>&quot;</span> <span class="string">&quot;<span class="variable">$filepath</span>.aria2&quot;</span> <span class="string">&quot;<span class="variable">$path</span>/*.torrent&quot;</span>   <span class="comment">#删除</span></span><br><span class="line">        php <span class="variable">$olaindex</span> od:cache   <span class="comment">#刷新</span></span><br><span class="line">        <span class="built_in">exit</span> 0</span><br><span class="line">    <span class="keyword">elif</span> [ <span class="string">&quot;<span class="variable">$path</span>&quot;</span> = <span class="string">&quot;<span class="variable">$downloadpath</span>&quot;</span> ];<span class="keyword">then</span>   <span class="comment">#文件夹</span></span><br><span class="line">        <span class="built_in">cd</span> <span class="string">&quot;<span class="variable">$filepath</span>&quot;</span></span><br><span class="line">        <span class="keyword">for</span> file <span class="keyword">in</span> *;<span class="keyword">do</span>   <span class="comment">#第一层目录</span></span><br><span class="line">            php <span class="variable">$olaindex</span> od:upload <span class="string">&quot;<span class="variable">$file</span>&quot;</span> <span class="string">&quot;<span class="variable">$folder</span>/<span class="variable">$&#123;filepath##*/&#125;</span>&quot;</span></span><br><span class="line">            rm -rf <span class="string">&quot;<span class="variable">$file</span>&quot;</span></span><br><span class="line">        <span class="keyword">done</span></span><br><span class="line">        <span class="keyword">for</span> file <span class="keyword">in</span> */* */*/*;<span class="keyword">do</span>   <span class="comment">#第二、三层目录</span></span><br><span class="line">            php <span class="variable">$olaindex</span> od:upload <span class="string">&quot;<span class="variable">$file</span>&quot;</span> <span class="string">&quot;<span class="variable">$folder</span>/<span class="variable">$&#123;filepath##*/&#125;</span>/<span class="variable">$&#123;file%/*&#125;</span>&quot;</span></span><br><span class="line">            rm -rf <span class="string">&quot;<span class="variable">$file</span>&quot;</span></span><br><span class="line">        <span class="keyword">done</span></span><br><span class="line">        rm -rf <span class="string">&quot;<span class="variable">$filepath</span>&quot;</span> <span class="string">&quot;<span class="variable">$filepath</span>.aria2&quot;</span> <span class="string">&quot;<span class="variable">$path</span>/*.torrent&quot;</span></span><br><span class="line">        php <span class="variable">$olaindex</span> od:cache</span><br><span class="line">        <span class="built_in">exit</span> 0</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>保存，然后编辑aria2配置文件:</p>
+<p><code>vi /root/.aria2/aria2.conf</code></p>
+<p>按<code>i</code>进入插入模式，在文件中添加一句：</p>
+<p><code>on-download-complete=/root/.aria2/up.sh</code></p>
+<p>按<code>Esc</code>，输入<code>:wq</code>保存退出。</p>
+<p>重启aria2:</p>
+<p><code>service aria2 restart</code></p>
+<p>这样下载文件到vps后会上传到onedrive再删除vps上的文件。</p>
+<p><strong>到此，可离线在线观看视频的网盘搭建完成！</strong></p>
+<p><strong>参考：</strong></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/WangNingkai/OLAINDEX">https://github.com/WangNingkai/OLAINDEX</a><br><a target="_blank" rel="noopener" href="https://imwnk.cn/archives/bt-olaindex">https://imwnk.cn/archives/bt-olaindex</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4e5bee06ad74">https://www.jianshu.com/p/4e5bee06ad74</a></p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Euukey</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://euukey.com/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/">https://euukey.com/2020/02/16/20200216-aria2-ariang-olaindex-da-jian-ke-chi-xian-xia-zai-de-wang-pan/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://euukey.com" target="_blank">煎鱼的海</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/onedrive/">onedrive</a><a class="post-meta__tags" href="/tags/OLAINDEX/">OLAINDEX</a><a class="post-meta__tags" href="/tags/aria2/">aria2</a><a class="post-meta__tags" href="/tags/ariaNg/">ariaNg</a><a class="post-meta__tags" href="/tags/olaindex/">olaindex</a><a class="post-meta__tags" href="/tags/oneindex/">oneindex</a><a class="post-meta__tags" href="/tags/%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD/">离线下载</a><a class="post-meta__tags" href="/tags/%E7%BD%91%E7%9B%98/">网盘</a><a class="post-meta__tags" href="/tags/%E8%87%AA%E5%BB%BA%E7%BD%91%E7%9B%98/">自建网盘</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/reward/wechat.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/reward/wechat.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/reward/alipay.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/reward/alipay.png" alt="Alipay"/></a><div class="post-qr-code-desc">Alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/03/04/chao-xing-mu-ke-shi-pin-pa-chong-pi-liang-xia-zai/"><img class="prev-cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">超星慕课视频爬虫批量下载</div></div></a></div><div class="next-post pull-right"><a href="/2019/06/11/20190611-xin-wen-ping-lun/"><img class="next-cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">平安校园？这般平安</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2020/03/16/20200316-chuan-xin-ban-ben-de-aria2-chi-xian-xia-zai/" title="OLAINDEX船新版本的aria2离线下载"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-03-16</div><div class="title">OLAINDEX船新版本的aria2离线下载</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="https://cdn.jsdelivr.net/gh/Euukey/euukey.github.io/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Euukey</div><div class="author-info__description">人之帅，莫过于煎鱼</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">40</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/euukey" target="_blank" title="Gayhub"><i class="iconfont icon-gitHub"></i></a><a class="social-icon" href="mailto:euukey@163.com" target="_blank" title="Email"><i class="iconfont icon-Email"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="订阅"><i class="iconfont icon-rss"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=764976388" target="_blank" title="扣扣"><i class="iconfont icon-qq1"></i></a><a class="social-icon" href="https://space.bilibili.com/18786402" target="_blank" title="B站"><i class="iconfont icon-bilibili"></i></a><a class="social-icon" href="https://music.163.com/#/user/home?id=101821532" target="_blank" title="网易云音乐"><i class="iconfont icon-wangyiyunyinle"></i></a><a class="social-icon" href="http://www.coolapk.com/u/646589" target="_blank" title="酷安"><i class="iconfont icon-coolapk"></i></a><a class="social-icon" href="https://www.facebook.com/euukey.chan" target="_blank" title="Facebook"><i class="iconfont icon-facebook1"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">佛系更新博主</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%95%8C%E9%9D%A2%E9%A2%84%E8%A7%88"><span class="toc-number">1.</span> <span class="toc-text">界面预览:</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/03/27/20191012-zi-ti-zheng-li/" title="自整理1.3G免费商用中文字体【停止更新】">自整理1.3G免费商用中文字体【停止更新】</a><time datetime="2021-03-27T13:10:17.261Z" title="发表于 2021-03-27 21:10:17">2021-03-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/09/25/yi-kuan-kai-yuan-de-ju-he-sou-suo-yin-qing-xin-an-sou-suo/" title="一款开源的聚合搜索引擎——信安搜索">一款开源的聚合搜索引擎——信安搜索</a><time datetime="2020-09-25T15:42:00.000Z" title="发表于 2020-09-25 23:42:00">2020-09-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/07/09/kai-xiang-yi-ge-xian-yu-tao-lai-de-mlais-zhi-neng-shou-biao/" title="【开箱】一个闲鱼淘来的Mlais智能手表">【开箱】一个闲鱼淘来的Mlais智能手表</a><time datetime="2020-07-09T14:59:06.000Z" title="发表于 2020-07-09 22:59:06">2020-07-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/05/18/li-yong-jsdelivr-you-hua-wang-zhan-jia-zai-su-du/" title="利用jsDelivr优化网站加载速度">利用jsDelivr优化网站加载速度</a><time datetime="2020-05-18T08:16:05.000Z" title="发表于 2020-05-18 16:16:05">2020-05-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/04/20/tachiyomi-yi-kuan-kai-yuan-man-hua-yue-du-qi/" title="Tachiyomi：一款开源漫画阅读器(附下载)">Tachiyomi：一款开源漫画阅读器(附下载)</a><time datetime="2020-04-19T17:12:42.000Z" title="发表于 2020-04-20 01:12:42">2020-04-20</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2018 - 2021 By Euukey</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20200230" target="_blank"> 20200230号</a><span class="footer-separator">|</span><a href><a href="sitemap.xml" target="_blank">网站地图</a><br><div style='display:inline-flex'><a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"><img src="/img/ypy_logo.png" style="width:60px;height:30px;margin-top:-2px;" /></a>&nbsp;提供图片CDN加速</div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(()=>{
+  const $countDom = document.getElementById('twikoo-count')
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'twikoo-7g7rhkd638fb9320',
+      region: ''
+    }, null))
+  }
+
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'twikoo-7g7rhkd638fb9320',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      $countDom.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const loadTwikoo = (bool = false) => {
+    if (typeof twikoo === 'object') {
+      init()
+      bool && $countDom && setTimeout(getCount,0)
+    } else {
+      getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(()=> {
+        init()
+        bool && $countDom && setTimeout(getCount,0)
+      })
+    }
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo(true)
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

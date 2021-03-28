@@ -1,0 +1,68 @@
+<html>
+<head>
+  <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"> -->
+  <meta charset="utf-8" />
+  <title>SinaHot</title>
+  <link rel="stylesheet" href="myfreestyle.css" />
+  <link rel="shortcut icon" href="favicon.ico">
+</head>
+<body onload="myFunction()">
+<div id="head_top">
+  <div class="link">
+    <ul>
+      <li>News</li>
+      <li>Mail</li>
+      <li>Images</li>
+      <li>Videos</li>
+      <li>Maps</li>
+      <li>  <img src="data:image/svg+xml;base64,
+        PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDQwOCA0MDgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQwOCA0MDg7IiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz48Zz4KCTxnIGlkPSJhcHBzIj4KCQk8cGF0aCBkPSJNMCwxMDJoMTAyVjBIMFYxMDJ6IE0xNTMsNDA4aDEwMlYzMDZIMTUzVjQwOHogTTAsNDA4aDEwMlYzMDZIMFY0MDh6IE0wLDI1NWgxMDJWMTUzSDBWMjU1eiBNMTUzLDI1NWgxMDJWMTUzSDE1M1YyNTV6ICAgICBNMzA2LDB2MTAyaDEwMlYwSDMwNnogTTE1MywxMDJoMTAyVjBIMTUzVjEwMnogTTMwNiwyNTVoMTAyVjE1M0gzMDZWMjU1eiBNMzA2LDQwOGgxMDJWMzA2SDMwNlY0MDh6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjZmZmZmZmIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg=="></li>
+      </ul>
+  </div>
+  <div class="login">
+    <ul>
+      <li>login</li>
+      <li>register</li>
+    </ul>
+  </div>
+</div>
+
+<div class="content">
+  <div class="logo">
+    <img src= "https://image.flaticon.com/icons/svg/408/408769.svg" />
+  </div>
+  <div class="search-bar">
+    <input type="text" placeholder="数百头母猪为何半夜惨叫" id="toWord">
+    <script type="text/javascript">
+      var key_w = document.getElementById('toWord')
+    </script>
+    <button class="search1" onclick="window.location.href='http://q1.qlogo.cn/g?b=qq&nk='+key_w.value+'&s=640'"></button>
+  </div>
+</div>
+  <div class="lang">新浪提供：
+    <div><a href="../th.mp4">输入QQ号点击获取头像</a></div>
+</div>
+<div id="yy"></div>
+<div class='footer'>
+  @<a href="http://euukey.com">Euukey<a>
+  <div>
+    <script type="text/javascript">
+      function myFunction() {
+      var httpRequest = new XMLHttpRequest();
+        httpRequest.open('GET', 'https://v1.hitokoto.cn/?c=d&encode=text', true);
+        httpRequest.send();
+
+        httpRequest.onreadystatechange = function () {
+            if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+                var text = httpRequest.responseText;
+                console.log(text);
+                // alert(text)
+                document.getElementById("yy").innerHTML=text;
+            }
+        }
+
+      }
+
+    </script>
+</body>
+</html>

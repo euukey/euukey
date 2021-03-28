@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>🐕啊!这……AmaZing！</title>
+    <style media="screen">
+      .tg{
+        margin: 25px;
+        background-color: rgba(255,255,255,0.83);
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 10px 10px 15px rgba(20, 20, 20, 0.1);
+      }
+    </style>
+  </head>
+  <body style="background:url(http://graph.baidu.com/resource/12133d593967cf391015a01595775087.jpg)">
+
+    <div style="text-align: center;width: 100%;display: inline-block;">
+    <div style="text-shadow: 0px 0px 20px #8BC34A;color:green;font-weight:bold;font-size:20px;font-family:Microsoft YaHei;margin:10px;">每日一舔🐶快乐飞天</div>
+    <img style="width:220px;border-radius:10px;margin-bottom:50px;margin-top:20px;box-shadow: 10px 10px 15px rgba(41, 41, 41, 0.3);" src="" alt="">
+    <br>
+    <button style="width:120px;height:35px;font-size:17px;font-family: Microsoft YaHei;color:white;outline:none;background: #1E90FF;border-radius:20px;border-width:0px;margin:5px;" type="button" value="一键舔狗" onclick="myFunction()">一键舔狗</button>
+    <button class="btn" data-clipboard-target="#tg" aria-label="copied" style="width:120px;height:35px;font-size:17px;font-family: Microsoft YaHei;color:white;outline:none;background: #129c4f;border-radius:20px;border-width:0px;margin:5px;"onclick=alert('你居然想复制我？')>
+    点击复制
+    </button>
+    <!-- <div id='tg' class='tg' style="margin: 25px;background-color: rgba(255,255,255,0.83);padding: 10px;border-radius: 10px;box-shadow: 10px 10px 15px rgba(20, 20, 20, 0.1);"></div> -->
+    <div id='tg'></div>
+
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $("button:first").click(function(){
+        $("#tg").addClass("tg");
+        });
+      });
+    </script>
+    <script type="text/javascript">
+      function myFunction() {
+      var httpRequest = new XMLHttpRequest();
+        httpRequest.open('GET', 'https://v1.alapi.cn/api/dog?format=text', true);
+        httpRequest.send();
+
+        httpRequest.onreadystatechange = function () {
+            if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+                var text = httpRequest.responseText;
+                console.log(text);
+                // alert(text)
+                document.getElementById("tg").innerHTML=text;
+            }
+        }
+
+      }
+
+    </script>
+    <script type="text/javascript">
+
+      window.onload=function (){
+      o.imgRandom();
+      }
+      var o={
+      aImg:['https://yanxuan.nosdn.127.net/a44dbb5274c76699512f65766a780edb.jpg','https://yanxuan.nosdn.127.net/415079f0205af9167a035dacaaac6fc3.jpg','https://yanxuan.nosdn.127.net/1f9d7f100ec1a1b22b7c639682917ba5.jpg','https://yanxuan.nosdn.127.net/85bc3b2777937b7d6f5ca7e2d263ecfa.jpg','https://yanxuan.nosdn.127.net/7e67ce02f34858f41b714bf7ca11c225.jpg','https://yanxuan.nosdn.127.net/5344783a77f5da3cae1e8da977856fe4.jpg','https://yanxuan.nosdn.127.net/1cc450de1e1f8b45867a966b3e9e433b.jpg','https://yanxuan.nosdn.127.net/0f6cd566f05b686128216083a9f9b6c2.jpg','https://yanxuan.nosdn.127.net/85c01cbf33a96218f2fa6df015884b2a.jpg','https://yanxuan.nosdn.127.net/86c4602896d1f2e707682224689a7e84.jpg','https://yanxuan.nosdn.127.net/cd13c8a1dda027300b9fd3482deeecf3.jpg','https://yanxuan.nosdn.127.net/477813a56e56e7bddf8d7083d80ec384.jpg','https://yanxuan.nosdn.127.net/0abdaf2767dcf04cfa6cc7c4928fca42.jpg','https://yanxuan.nosdn.127.net/937e7b10e60c3c33b8377a350721bd71.jpg','https://yanxuan.nosdn.127.net/69599bf747c6f2833d3a074c1233acb9.gif','https://yanxuan.nosdn.127.net/0ff2004057f34fec24c024e458dc3d58.jpg','https://yanxuan.nosdn.127.net/c166e3e9ad65caf45665358ae2db05fd.jpg','https://yanxuan.nosdn.127.net/c45c6034acf74018a3f78d5f88c07bcf.jpg','https://yanxuan.nosdn.127.net/d1cd76342362d9deb31f7451e2c5da25.jpg','https://yanxuan.nosdn.127.net/93f9d4aab61d6e3a4bd61c7b49442734.jpg'],
+      imgRandom:function (){
+      var img=document.getElementsByTagName("img")[0];
+      var b=Math.random()*10000;
+      b=Math.floor(b)%(this.aImg.length);
+      img.src=this.aImg[b];
+      }
+      };
+    </script>
+    <script type="text/javascript">
+    var clipboard = new ClipboardJS('.btn');
+        clipboard.on('success', function(e) {// 复制成功
+            e.clearSelection();
+        });
+        clipboard.on('error', function(e) {// 复制失败
+            console.error('Action:', e.action);
+            console.error('Trigger:', e.trigger);
+        });
+    </script>
+  </body>
+</html>
