@@ -1,12 +1,14 @@
 /* 灰色 */
-/* html{
+html{
 filter: grayscale(100%);
 -webkit-filter: grayscale(100%);
 -moz-filter: grayscale(100%);
 -ms-filter: grayscale(100%);
 -o-filter: grayscale(100%);
 filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
-} */
+}
+/* 黑白 */
+/* html {-webkit-filter: grayscale(100%);filter:progid:DXImageTransform.Microsoft.BasicImage(graysale=1);} */
 body {
   /* cursor: url(https://cdn.jsdelivr.net/gh/Euukey/euukey.github.io/img/cursor.png),default; */
   cursor: url(https://cdn.jsdelivr.net/gh/Euukey/euukey.github.io/img/cursor1.png), default;
