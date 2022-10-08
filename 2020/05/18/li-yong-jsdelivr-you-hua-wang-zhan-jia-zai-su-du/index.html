@@ -190,7 +190,7 @@
   const init = () => {
     twikoo.init(Object.assign({
       el: '#twikoo-wrap',
-      envId: 'http://pl.euukey.com/',
+      envId: 'https://pl.euukey.com/',
       region: '',
       onCommentLoaded: function () {
         btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
@@ -202,7 +202,7 @@
     const countELement = document.getElementById('twikoo-count')
     if(!countELement) return
     twikoo.getCommentsCount({
-      envId: 'http://pl.euukey.com/',
+      envId: 'https://pl.euukey.com/',
       region: '',
       urls: [window.location.pathname],
       includeReply: false
