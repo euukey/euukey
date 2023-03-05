@@ -177,14 +177,14 @@
   </url>
   
   <url>
-    <loc>https://euukey.com/zc2018.html</loc>
+    <loc>https://euukey.com/zc2017.html</loc>
     
     <lastmod>2020-05-11</lastmod>
     
   </url>
   
   <url>
-    <loc>https://euukey.com/zc2017.html</loc>
+    <loc>https://euukey.com/zc2018.html</loc>
     
     <lastmod>2020-05-11</lastmod>
     
@@ -389,27 +389,6 @@
   </url>
   
   <url>
-    <loc>https://euukey.com/tags/windows-11/</loc>
-    <lastmod>2023-03-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://euukey.com/tags/surface-pro7/</loc>
-    <lastmod>2023-03-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://euukey.com/tags/%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2023-03-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://euukey.com/tags/%E6%BC%AB%E7%94%BB/</loc>
     <lastmod>2023-03-05</lastmod>
     <changefreq>daily</changefreq>
@@ -432,6 +411,27 @@
   
   <url>
     <loc>https://euukey.com/tags/%E5%AE%89%E5%88%A9/</loc>
+    <lastmod>2023-03-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://euukey.com/tags/windows-11/</loc>
+    <lastmod>2023-03-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://euukey.com/tags/surface-pro7/</loc>
+    <lastmod>2023-03-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://euukey.com/tags/%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2023-03-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
